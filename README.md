@@ -17,5 +17,5 @@ ezEdits is a WorldEdit/FastAsyncWorldEdit (WE/FAWE) extension plugin which adds 
 * Get ezEdits (**SOON**): [Ko-Fi](https://ko-fi.com/ezedits) or [Patreon](https://www.patreon.com/ezedits)
 * ~~Discord (tbd)~~
 
-* Twitter: https://twitter.com/ezEditsMC
-* Instagram: https://www.instagram.com/ezeditsmc/
+* Twitter: [https://twitter.com/ezEditsMC](https://twitter.com/ezEditsMC)
+* Instagram: [https://www.instagram.com/ezeditsmc/](https://www.instagram.com/ezeditsmc/)
