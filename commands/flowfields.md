@@ -22,7 +22,7 @@ Generates a flow field within a selection, creating dynamic pattern based on the
 * **Iterations** (Default: 32): The number of iterations or steps per line controlling how long they will be.
 * **Velocity** (Default: 1): The speed at which points move across the surface.
 * **PaletteScalar** (Default: 1.0): Scales the value used to select a palette block.
-* **Noise** (Default: \[Type:Perlin]): The type of noise used to generate the flowfield.
+* **Noise** (Default: `Perlin()`): The type of noise used to generate the flowfield.
 * **-m**: Applies a mask to limit the flow's start points, focusing the effect on specific areas.
 * **-h**: Enables heightmap mode for creating 2D flowfields, with optional block distribution modes.
 * **-i** (Default: 0.0): Sets the inertia weighting of the flow, controlling how much previous movement directions influence the next.
@@ -54,7 +54,7 @@ The same fundamental premise as a Flow Field, but only generating 1 line.
 * **Pattern**: Determines the pattern of blocks to place.&#x20;
 * **Length**: Sets the length of the flowline in blocks. This defines how far the flowline will extend from the starting point.
 * **Gravity** (Default: -1): Applies gravity to points, pulling them in the specified direction.
-* **Noise** (Default: \[Type:Perlin]): The type of noise used to generate the flowfield.
+* **Noise** (Default: `Perlin()`): The type of noise used to generate the flowfield.
 * **-i** (Default: 0.0): Adjusts the point inertia weighting, controlling how much previous movement directions influence future directions. A value between 0.0 and 1.0.
 * **-c** (Default: 0): If greater than 0, creates a convex selection out of the flowline, using the specified number of points to define the selection's shape.
 * **-s**: Enables snapping of the flowline to surfaces, making the line adhere to the contours of the landscape or structures it intersects.

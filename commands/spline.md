@@ -143,7 +143,7 @@ Creates a noise-based spline along the selected convex region.
 * **Strength** (Default: 0.5): Determines the noise strength, affecting the intensity of the noise.
 * **Stretch** (Default: 4.0): Controls the stretch factor of noise along the spline.
 * **Spin** (Default: 0): Adds twist to the spline.
-* **Noise**: Specifies the type of noise to use for generation.
+* **Noise** (Default: `Perlin(Freq:3)`): Specifies the type of noise to use for generation.
 * **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
 * **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
 * **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.

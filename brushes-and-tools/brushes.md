@@ -26,7 +26,7 @@ The `gradient` brush allows you to first define a plane by selecting 2 points, y
 * **Interpolation** (Default: NONE): Determines the type of interpolation used in the gradient transition.
 * **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
 * **-a**: When activated, allows the gradient to replace air blocks.
-* **-n \<noise>** (Default: \[NoiseType:White]): Adds an underlying noise field to the gradient effect.
+* **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
 * **-z \<scale>** (Default: 1): Modifies the scale of the noise.
 * **-d \<distanceFunction>** (Default: NONE): Sets the distance mode changing the brush to work based on distance from the initial block with the given distance function.
 
@@ -53,7 +53,7 @@ The `gradientstroke` brush allows for gradient application along a path (stroke)
 * **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
 * **-a**: When activated, allows the gradient to replace air blocks.
 * **-d**: Activates the 'distance to center' mode which applies the gradient based on distance to the middle of the stroke line instead of distance along the stroke.
-* **-n \<noise>** (Default: \[NoiseType:White]): Adds an underlying noise field to the gradient effect.
+* **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
 * **-z \<scale>** (Default: 1): Modifies the scale of the noise.
 
 </details>
