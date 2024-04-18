@@ -238,6 +238,8 @@ Textures a region using a global light source direction to control the applicati
 
 <details>
 
+<summary>Advanced Texturing</summary>
+
 **`//ezt advanced <mask> <palette> <texture>`**
 
 More powerful interface of using eztexture. It has access to all other eztexture commands and can mix/combine them.
