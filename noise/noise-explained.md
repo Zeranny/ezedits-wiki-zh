@@ -16,7 +16,7 @@ _Noise in ezEdits based on a modified version of FastNoiseLite, so we strongly r
 
 ## Noise Parameters
 
-Each parameter and many values also has a shorthand, such as "Type" instead of "NoiseType" or "Simplex" instead of "OpenSimplex2". Wherever this is possible, the shorthand will be shown in brackets.\
+Each parameter and many values also has a shorthand, such as "Fractal" instead of "FractalType" or "Simplex" instead of "OpenSimplex2". Wherever this is possible, the shorthand will be shown in brackets.\
 <mark style="color:red;">`Red = Parameter`</mark>    <mark style="color:purple;">`Purple = Value`</mark>
 
 &#x20;
@@ -25,9 +25,9 @@ Each parameter and many values also has a shorthand, such as "Type" instead of "
 
 <details>
 
-<summary>Setting the Noise Type<br><mark style="color:red;"><code>NoiseType (Type)</code></mark></summary>
+<summary>Setting the Noise Type<br><mark style="color:red;"></summary>
 
-Sets the type of noise to be used.
+Sets the type of noise to be used. This is the start of any noise and will be in the format of `Noise()`, for example `Perlin()`, where all other parameters will go between the brackets.
 
 * <mark style="color:purple;">`Perlin (per)`</mark>
 * <mark style="color:purple;">`OpenSimplex2 (simplex)`</mark>
@@ -129,7 +129,7 @@ Sets the type of noise to be used.
 <summary>Additional Shard Noise Parameters</summary>
 
 * <mark style="color:red;">`Sharpness (Sharp)`</mark>\
-  Usually `0..100`\
+  Usually `0..1.0`\
   Controls the pattern sharpness for Shard noise. Higher values have more defined edges within the pattern, whereas low values will appear more blurry.
 
 </details>
@@ -201,10 +201,10 @@ Sets the type of noise to be used.
 
 ## Examples
 
-**`[Type:Value,Seed:123,Freq:0.04]`**
+**`Value(Seed:123,Freq:0.04)`**
 
 <figure><img src="../.gitbook/assets/2024-01-10_20.38.35.png" alt=""><figcaption></figcaption></figure>
 
-**`[Type:Cellular,Distance:Euclidean,DistReturn:NoiseLookup,Lookup:Perlin,LookupFreq:0.2,Freq:0.1]`**
+**`Cellular(Distance:Euclidean,DistReturn:NoiseLookup,Lookup:Perlin,LookupFreq:0.2,Freq:0.1)`**
 
 <figure><img src="../.gitbook/assets/2024-01-10_20.41.26.png" alt=""><figcaption></figcaption></figure>
