@@ -14,7 +14,12 @@ All brushes are contained within the `//ezbrush ...` (`//ezbr`) command.
 
 **`//ezbr gradient <palette> [radius] [interpolation] [strength] [-a] [-n <noise>] [-z <scale>] [-d <distanceFunction>]`**
 
-The `gradient` brush allows you to first define a plane by selecting 2 points (Left click to start plane, right click to set an end point), you can then paint with your gradient with blocks chosen based on distance along this plane.
+The `gradient` brush allows you to first define a plane by selecting 2 points, you can then paint with your gradient with blocks chosen based on distance along this plane.
+
+**Left Click to start a plane at your target block**\
+**Sneak + Left Click to start a plane at the player position**\
+**Right Click to set the end of the plane at your target block OR paint palette blocks if the plane is set**\
+**Sneak + Right Click to set the end of the plane at the player position OR paint palette blocks if the plane is set**
 
 * **Palette**: Specifies the palette to use for the gradient.
 * **Radius** (Default: 8): Sets the radius of the brush.
