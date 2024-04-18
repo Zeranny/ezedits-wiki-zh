@@ -51,6 +51,22 @@ A miscellaneous collection of commands which operate within your selected region
 
 </details>
 
+### `//ezslabmerge`
+
+<details>
+
+<summary>SlabMerge</summary>
+
+**`//ezslabmerge <mask> [-b] [-t]`**
+
+**`Alias: //slabmerge`**
+
+* **Mask**: Specifies the mask to select which blocks to affect within the region.&#x20;
+* **-b**: When used, will also convert bottom slabs to full blocks.&#x20;
+* **-t**: When used, will also convert top slabs to full blocks.&#x20;
+
+</details>
+
 ### `//ezstatecyle`
 
 <details>
