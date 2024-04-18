@@ -183,7 +183,7 @@ Textures a region using a given noise.
 **`//ezt pointlight <mask> <palette> [range] [radius] [interval]`** \
 **`[-d] [-f]`**
 
-Textures a region based on the orientation of surfaces relative to a light source..
+Textures a region based on the orientation of surfaces relative to a light source.
 
 * **Mask**: Blocks to replace.
 * **Palette**: Specifies the palette to use.
@@ -193,7 +193,7 @@ Textures a region based on the orientation of surfaces relative to a light sourc
 * **-d**: Enables dithering, which introduces randomness to the texturing process.
 * **-f**: Disables light falloff, applying uniform light intensity across the entire region, regardless of distance from the light source.
 * **-l**: Changes the light source position. \`-l position\` to use the player's location.
-* **-o** (Default: 0): Determines the stregth of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
+* **-o** (Default: 0): Determines the strength of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
 * **-r** (Default: 1): Determines the smoothing radius for occlusion (shadows).
 
 </details>
@@ -229,7 +229,36 @@ Textures a region using a global light source direction to control the applicati
 * **Interval** (Default: "0,180"): Defines the surface orientation interval in degrees, where 0 is facing directly towards the light, and 180 is facing away. Surfaces within this interval are textured, and any below or above will be textured with the first or last palette block.
 * **-d**: Enables dithering, which introduces randomness to the texturing process.
 * **-l**: Changes the light source position. \`-l position\` to use the player's location.
-* **-o** (Default: 0): Determines the stregth of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
+* **-o** (Default: 0): Determines the strength of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
 * **-r** (Default: 1): Determines the smoothing radius for occlusion (shadows).
+
+</details>
+
+### `advanced`
+
+<details>
+
+**`//ezt advanced <mask> <palette> <texture>`**
+
+More powerful interface of using eztexture. It has access to all other eztexture commands and can mix/combine them.
+
+- **Mask**: Blocks to replace.
+- **Palette**: Specifies the palette to use.
+- **Texture**: A Texturing specification.
+
+#### How to define a `<texture>`?
+
+A `<texture>` follows the following common way of specifying complex objects:
+```<type>(<parameter1>:<value1>,<parameter2>:<value2>)```
+E.g. `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+or the same but in a more readable format:
+```
+Ambient(
+    Radius:2,
+    Brightness:0.2,
+    Contrast:0.3
+)
+```
+Each Texture type has its own set of parameters. You can set as many parameters as you like. If a parameter is not set, a default value will be used instead. Each parameter can have different inputs it accepts. Some parameters accept numbers, some accept a 3D vector, some accept a Noise argument, and some even accept Texture objects themselves.
 
 </details>
