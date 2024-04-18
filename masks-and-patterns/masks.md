@@ -34,6 +34,32 @@ Takes the block the player is aiming at as the mask.
 
 </details>
 
+### `#blocklight`
+
+<details>
+
+<summary>#blocklight Mask</summary>
+
+**`#blocklight[lightLevel]` or `#blocklight[minLevel][maxLevel]`**
+
+Masks to blocks of a given block light (Illimunation provided by light sources other than skylight).
+Optionally takes a minimum and maximum light level, matching any level within that range.
+
+</details>
+
+### `#truelight`
+
+<details>
+
+<summary>#truelight Mask</summary>
+
+**`#truelight[lightLevel]` or `#truelight[minLevel][maxLevel]`**
+
+Masks to blocks of a given total light level (Illimunation provided by any light sources including skylight).
+Optionally takes a minimum and maximum light level, matching any level within that range.
+
+</details>
+
 ### `#eznoise`
 
 <details>
