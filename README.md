@@ -1,1 +1,18 @@
-# ezedits-wiki
+# ezEdits Docs
+
+<div align="left">
+
+<figure><img src=".gitbook/assets/logofinal5.png" alt="" width="188"><figcaption></figcaption></figure>
+
+</div>
+
+## What is ezEdits?
+
+ezEdits is a WorldEdit/FastAsyncWorldEdit (WE/FAWE) extension plugin which adds numerous new commands, patterns, masks, and tools to help you make amazing creations!
+
+
+
+## Links
+
+* Get ezEdits (**SOON**): [Ko-Fi](https://ko-fi.com/ezedits) or [Patreon](https://www.patreon.com/ezedits)
+* ~~Discord (tbd)~~
