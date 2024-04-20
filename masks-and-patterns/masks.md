@@ -79,9 +79,9 @@ Uses a noise preset values `0.0-1.0` to match blocks above a given noise thresho
 
 <summary>#vectorgradient Mask</summary>
 
-**`#vectorgradient[vector][distance][<noisePreset>][<noiseScale>][noiseSeed]`**
+**`#vectorgradientmask[vector][distance][<noisePreset>][<noiseScale>][noiseSeed]`**
 
-Shorthand: `#vgradient`
+Shorthand: `#vgradientm`
 
 Masks blocks along a vector with a given distance length. With closer blocks more likely to pass the mask check. \
 Compatible with noise presets.
