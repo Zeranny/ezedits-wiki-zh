@@ -76,7 +76,7 @@ e.g `//ezshapes polydome`
 
 <summary>Tetrahedron</summary>
 
-**`//ezsh tetrahedron [rotation] [-o]`**
+**`//ezsh tetrahedron <pattern> <radius> [rotation] [-o]`**
 
 * **Pattern**: Specifies the block pattern.&#x20;
 * **Radius**: Sets the size of the Tetrahedron.&#x20;
@@ -91,7 +91,7 @@ e.g `//ezshapes polydome`
 
 <summary>Torus</summary>
 
-**`//ezsh torus <major_radius> <minor_radius> [-dors]`**
+**`//ezsh torus <pattern> <major_radius> <minor_radius> [-dors]`**
 
 * **Pattern**: Specifies the block pattern.
 * **Major Radius**: Sets the major radius of the torus.

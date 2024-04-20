@@ -9,7 +9,7 @@
 **`#near[mask][distance]`**\
 **`#near[mask][minDistance][maxDistance]`**\
 \
-Masks to all blocks withing a given spherical (euclidean) distance of a mask.\
+Masks to all blocks within a given spherical (euclidean) distance of a mask.\
 Doesn't modify blocks which match the inner `mask`.\
 Can also be set to exclude blocks closer than the minimum distance.\
 
