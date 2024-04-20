@@ -103,6 +103,7 @@ A miscellaneous collection of commands which operate within your selected region
 * **-c**: When used, centers the noise generation on the world coordinates of the selection.&#x20;
 * **-h**: Activates heightmap mode using 2D noise. \
   _Heightmap mode is only compatible with Cuboid, Cylinder, or Polygon region types._
-* **-n**: Uses normalized (-1 to 1) selection-centered coordinates for noise generation. **-t**: Enables smooth mode, specifically for snow, water, and lava blocks in the palette \[Applicable only in heightmap mode].
+* **-n**: Uses normalized (-1 to 1) selection-centered coordinates for noise generation.
+* **-t**: Enables smooth mode, specifically for snow, water, and lava blocks in the palette \[Applicable only in heightmap mode].
 
 </details>
