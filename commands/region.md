@@ -94,8 +94,8 @@ A miscellaneous collection of commands which operate within your selected region
 
 * **Palette**: Specifies the palette of blocks to use.&#x20;
 * **Noise**: Defines the noise preset to use.&#x20;
-* **Lower Threshold** (Default: 0): Sets the lower threshold for noise generation, with support for WorldEdit expressions.&#x20;
-* **Upper Threshold** (Default: 0.5): Sets the upper threshold for noise generation, with support for WorldEdit expressions.&#x20;
+* **Lower Threshold** (Default: 0): Sets the lower threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
+* **Upper Threshold** (Default: 0.5): Sets the upper threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
 * **-z** (Default: 1): Adjusts the scale of the noise.&#x20;
 * **-s** (Default: -1): Sets the noise seed.&#x20;
 * **-l** (Default: 0): Applies a vertical smear to 3D noise.&#x20;
