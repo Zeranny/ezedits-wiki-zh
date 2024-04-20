@@ -18,7 +18,8 @@ Takes the block the player is aiming at as the pattern.
 
 <summary>#eznoise Pattern</summary>
 
-**`#eznoise[palette][noisePreset][<scale>][<seed>]`**
+**`#eznoisepattern[palette][noisePreset][<scale>][<seed>]`**\
+**Alias: `#eznp`**
 
 Uses a noise preset values to return palette blocks.\
 **Which also has the following in-built presets:**
