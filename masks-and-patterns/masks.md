@@ -66,7 +66,8 @@ Optionally takes a minimum and maximum light level, matching any level within th
 
 <summary>#eznoise Mask</summary>
 
-**`#eznoise[noisePreset][<scale>][<threshold>][<seed>]`**
+**`#eznoisemask[noisePreset][<scale>][<threshold>][<seed>]`**\
+**Alias: `#eznm`**
 
 Uses a noise preset values `0.0-1.0` to match blocks above a given noise threshold.
 
