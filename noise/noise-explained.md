@@ -10,6 +10,12 @@ This is pretty much what we do in ezEdits, using noise to generate shapes, terra
 
 Within the plugin you will find several noise types, with each having different characteristics, and Cellular specifically coming with many additional parameters you can customise.
 
+Some of the many features that use noise include:
+
+* `//eznoisegen ...` - *Region Commands*
+* `#eznoisemask` - *Masks*
+* `//ezbrush gradient ...` - *Brushes*
+
 
 
 _Noise in ezEdits based on a modified version of FastNoiseLite, so we strongly recommend this website to experiment with noise parameters:_ [_http://auburn.github.io/FastNoiseLite/_ ](http://auburn.github.io/FastNoiseLite/)

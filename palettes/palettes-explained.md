@@ -5,6 +5,12 @@ Palettes in ezEdits represent a list of blocks that can be used in several comma
 Palettes can be saved and accessed using the **`#`** prefix for user-saved palettes, and **`##`** for inbuilt preset palettes.\
 e.g `##LegacyWool` represents the inbuilt wool palette starting from white wool, orange wool up to red wool and finally black wool.&#x20;
 
+Some of the many features that use palettes include:
+
+* `//eztexture ...` - *Texturing Commands*
+* `#palette` - *Masks*
+* `//ezbrush gradient ...` - *Brushes*
+
 
 
 Palettes can be constructed as a simple list of blocks, or via several modifiers:
