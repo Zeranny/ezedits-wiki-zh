@@ -36,7 +36,8 @@ Uses a noise preset values to return palette blocks.\
 
 <summary>#vectorgradient Pattern</summary>
 
-**`#vectorgradient[palette][vector][distance][<noisePreset>][<noiseScale>][<noiseSeed>]`**
+**`#vectorgradientpattern[palette][vector][distance][<noisePreset>][<noiseScale>][<noiseSeed>]`**\
+**Alias: `#vgradientp`**
 
 Sets palette blocks along a vector with a given distance length with the block chosen based on distance plus a blending factor. Can also use noise presets.
 
