@@ -235,9 +235,10 @@ A `<texture>` can be any of the existing texture modes. Some simples examples:
 - `Ambient(Radius:2)`
 - `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
 - `Flow(Noise:@@ridged(Freq:0.12))`
+
 To clarify: The following two commands will do the same.
-`//eztexture ambient #existing ##grayscale 2 0.2 0.3`
-`//eztexture advanced #existing ##grayscale Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+- `//eztexture ambient #existing ##grayscale 2 0.2 0.3`
+- `//eztexture advanced #existing ##grayscale Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
 
 #### Combining textures
 
@@ -257,7 +258,5 @@ The following textures have `Texture` parameters accepting `<texture>` arguments
 - `Blend(T:...,Radius:...)`
 
 Please note that the `Texture`/`Texture1`/`Texture2` are not optional. You must set them to use these combining/adjusting textures. (If you do not set them you'll receive an error saying `cannot be null`).
-
-Though it is often more verbose than the standard ezt commands, we put in great efforts to make tab-completion work as cooperatively as possible.
 
 </details>
