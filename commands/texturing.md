@@ -203,7 +203,7 @@ Textures a region using a global light source direction to control the applicati
 * **Palette**: Specifies the palette to use.
 * **Radius** (Default: 1): Defines the normal approximation radius, affecting the calculation of how surfaces are oriented relative to the sunlight.
 * **Interval** (Default: "0,180"): Defines the surface orientation interval in degrees, where 0 is facing directly towards the light, and 180 is facing away. Surfaces within this interval are textured, and any below or above will be textured with the first or last palette block.
-* **-l**: Changes the light source position to the given coordinates. \`-l position\` to use the player's location.
+* **-l** (Default: down): Global direction into which the light shines.
 * **-o** (Default: 0.0): Determines the strength of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
 * **-r** (Default: 1): Determines the smoothing radius for occlusion (shadows).
 
