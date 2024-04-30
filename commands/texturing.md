@@ -257,6 +257,12 @@ The following textures have `Texture`(`T`) parameters accepting `<texture>` argu
 - `Invert(T:...)`
 - `Blend(T:...,Radius:...)`
 
-Please note that the `Texture`/`Texture1`/`Texture2` are not optional. You must set them to use these combining/adjusting textures. (If you do not set them you'll receive an error saying `cannot be null`).
+Examples:
+- `WeightedAverage(T1:Sun(),T2:Ambient())`
+- `Blend(T:Flow(Noise:@@ridged(Freq:0.12)),Radius:0.7)`
+- `Darken(T1:Noise(Noise:@@smoothcells(freq:0.5)),T2:Flow)`
+- `Adjust(T:Pointlight,Contrast:0.5)`
+
+Please note that the `Texture`/`Texture1`/`Texture2` (`T`/`T1`/`T2`) are not optional. You must set them to use these combining/adjusting textures. (If you do not set them you'll receive an error saying `cannot be null`).
 
 </details>
