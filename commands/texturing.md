@@ -217,7 +217,8 @@ Textures a region using a global light source direction to control the applicati
 
 **`//ezt advanced <mask> <palette> <texture>`**
 
-More powerful interface of using eztexture. It has access to all other eztexture commands and can mix/combine them.
+More powerful interface of using eztexture. It has access to all other eztexture commands and can also mix/combine them.
+Meaning you can for example do ambient and sunlight texturing simultaneously.
 
 - **Mask**: Blocks to replace.
 - **Palette**: Specifies the palette to use.
@@ -227,15 +228,36 @@ More powerful interface of using eztexture. It has access to all other eztexture
 
 A `<texture>` follows the following common way of specifying complex objects:
 ```<type>(<parameter1>:<value1>,<parameter2>:<value2>)```
-E.g. `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
-or the same but in a more readable format:
-```
-Ambient(
-    Radius:2,
-    Brightness:0.2,
-    Contrast:0.3
-)
-```
 Each Texture type has its own set of parameters. You can set as many parameters as you like. If a parameter is not set, a default value will be used instead. Each parameter can have different inputs it accepts. Some parameters accept numbers, some accept a 3D vector, some accept a Noise argument, and some even accept Texture objects themselves.
+A `<texture>` can be any of the existing texture modes. Some simples examples:
+- `Ambient`
+- `Ambient()`
+- `Ambient(Radius:2)`
+- `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+- `Flow(Noise:@@ridged(Freq:0.12))`
+To clarify: The following two commands will do the same.
+`//eztexture ambient #existing ##grayscale 2 0.2 0.3`
+`//eztexture advanced #existing ##grayscale Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+
+#### Combining textures
+
+The following textures have `Texture1`/`Texture2` parameters accepting `<texture>` arguments themselves allowing you to combine texture modes:
+- `Add(T1:...,T2:...)`
+- `Subtract(T1:...,T2:...)`
+- `Multiply(T1:...,T2:...)`
+- `Divide(T1:...,T2:...)`
+- `WeightedAverage(T1:...,T2:...)`
+- `Darken(T1:...,T2:...)`
+- `Lighten(T1:...,T2:...)`
+- `Difference(T1:...,T2:...)`
+
+The following textures have `Texture` parameters accepting `<texture>` arguments themselves allowing you adjust/post-process textures:
+- `Adjust(T:...,Brightness:...,Contrast:...)`
+- `Invert(T:...)`
+- `Blend(T:...,Radius:...)`
+
+Please note that the `Texture`/`Texture1`/`Texture2` are not optional. You must set them to use these combining/adjusting textures. (If you do not set them you'll receive an error saying `cannot be null`).
+
+Though it is often more verbose than the standard ezt commands, we put in great efforts to make tab-completion work as cooperatively as possible.
 
 </details>
