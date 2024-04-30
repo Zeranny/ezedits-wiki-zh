@@ -242,7 +242,7 @@ To clarify: The following two commands will do the same.
 
 #### Combining textures
 
-The following textures have `Texture1`/`Texture2` parameters accepting `<texture>` arguments themselves allowing you to combine texture modes:
+The following textures have `Texture1`(`T1`)/`Texture2`(`T2`) parameters accepting `<texture>` arguments themselves allowing you to combine texture modes:
 - `Add(T1:...,T2:...)`
 - `Subtract(T1:...,T2:...)`
 - `Multiply(T1:...,T2:...)`
@@ -252,7 +252,7 @@ The following textures have `Texture1`/`Texture2` parameters accepting `<texture
 - `Lighten(T1:...,T2:...)`
 - `Difference(T1:...,T2:...)`
 
-The following textures have `Texture` parameters accepting `<texture>` arguments themselves allowing you adjust/post-process textures:
+The following textures have `Texture`(`T`) parameters accepting `<texture>` arguments themselves allowing you adjust/post-process textures:
 - `Adjust(T:...,Brightness:...,Contrast:...)`
 - `Invert(T:...)`
 - `Blend(T:...,Radius:...)`
