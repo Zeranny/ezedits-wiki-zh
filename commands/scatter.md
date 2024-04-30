@@ -20,30 +20,32 @@ It comes with a number of pre-defined shapes as well as the ability to use World
 
 **Current shapes**
 
-_Additional args are givin after the shape name, seperated by a colon ( : )_
+_Additional parameters are given within the parenthesis after a shape._
 
-* bean
-* cube
-* curl
-* cylinder
-* ellipsoid
-* fur
-* leaf
-* lemon
-* onion
-* polygon:\<sides>:\<yLensRadius>:\<yLensThickness>:\<rLensRadius>:\<rLensRadius>
-* pyramid:\<sides>
-* spike
-* supersphere:\<exponent>
+Note: currently you **MUST** put brackets after the shape name, even with no further parameters.
+
+* bean()
+* cube()
+* curl()
+* cylinder()
+* ellipsoid()
+* fur()
+* leaf()
+* lemon()
+* onion()
+* polygon(*Sides*)
+* pyramid(*Sides*)
+* spike()
+* supersphere(*Exponent*)
 * tetrahedron
-* torus:\<relativeRadius>
+* torus(*Thickness*)
 
 In addition to these, you can also define your own shape with a WorldEdit expression
 
-**`expression:<expression>`**
+**`expression;<expression>`**
 
 For example, this expression will create spirals:\
-`//ezsc expression:x+=sin(2*pi*y)/2;z+=cos(2*pi*y)/2;x*x+z*z<0.3^2`
+`//ezsc expression;x+=sin(2*pi*y)/2;z+=cos(2*pi*y)/2;x*x+z*z<0.3^2`
 
 
 
