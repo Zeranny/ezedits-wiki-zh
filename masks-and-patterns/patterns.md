@@ -59,3 +59,20 @@ Acts as if the selection were tiled/stacked.
 Optional `<offset>` variable to offset the pattern by a given vector.
 
 </details>
+
+
+
+### `#palette`
+
+<details>
+
+<summary>#palette Pattern</summary>
+
+**`#palette[palette]`**
+
+Takes the given palette and returns a list of palette blocks.
+Can be used as a random block pattern.
+
+e.g. `//set #palette[##ice]` is the same as `//set [blue_ice,packed_ice,ice]`
+
+</details>
