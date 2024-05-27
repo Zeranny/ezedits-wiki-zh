@@ -251,6 +251,7 @@ The following textures have `Texture1`(`T1`)/`Texture2`(`T2`) parameters accepti
 - `Darken(T1:...,T2:...)`
 - `Lighten(T1:...,T2:...)`
 - `Difference(T1:...,T2:...)`
+- `Screen(T1:...,T2:...)`
 
 The following textures have `Texture`(`T`) parameters accepting `<texture>` arguments themselves allowing you adjust/post-process textures:
 - `Adjust(T:...,Brightness:...,Contrast:...)`
