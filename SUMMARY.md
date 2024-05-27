@@ -28,13 +28,14 @@
 
 ## Commands
 
-* [Shapes](commands/shapes.md)
 * [Deformation](commands/deformation.md)
-* [Region](commands/region.md)
-* [Texturing](commands/texturing.md)
-* [Scatter](commands/scatter.md)
-* [Surface](commands/surface.md)
-* [Spline](commands/spline.md)
-* [Smoothing](commands/smoothing.md)
 * [Flowfields](commands/flowfields.md)
+* [Noisegen](commands/noisegen.md)
+* [Region](commands/region.md)
+* [Scatter](commands/scatter.md)
 * [Selections](commands/selections.md)
+* [Shapes](commands/shapes.md)
+* [Smoothing](commands/smoothing.md)
+* [Spline](commands/spline.md)
+* [Surface](commands/surface.md)
+* [Texturing](commands/texturing.md)
