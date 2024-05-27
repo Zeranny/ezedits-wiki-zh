@@ -58,12 +58,14 @@ Direction defaults to the direction the user is facing.
 ### `swap <sourcePalette> <targetPalette> [-a] [-f]`
 
 Region operation which swaps the blocks of the source palette with those of the target palette.\
-* **-a**: Activate to include air blocks (if the source palette contains air)\
+* **-a**: Activate to include air blocks (if the source palette contains air).\
 * **-f**: Activate to stretch the tartget palette to match the size of the source palette.
 
-### `print <palette>`
+### `print <palette> [-v]`
 
 Prints the blocks of a given palette in chat. Block list can be clicked to copy.
+
+**-v**: Verbose mode. Will print full block name and block states.
 
 ### `encode <palette>`
 
