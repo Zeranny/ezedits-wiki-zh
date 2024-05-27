@@ -81,29 +81,3 @@ A miscellaneous collection of commands which operate within your selected region
 * **State**: Identifies the block state value to cycle through for each block in the selection.
 
 </details>
-
-### `//eznoisegen`
-
-<details>
-
-<summary>NoiseGen</summary>
-
-**`//eznoisegen <palette> <noise> [lowerThreshold] [upperThreshold] [-z <scale>] [-s <seed>] [-l <smear>] [-o <offset>] [-chnt]`**
-
-**`Aliases: //noisegen | //ng`**
-
-* **Palette**: Specifies the palette of blocks to use.&#x20;
-* **Noise**: Defines the noise preset to use.&#x20;
-* **Lower Threshold** (Default: 0): Sets the lower threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
-* **Upper Threshold** (Default: 0.5): Sets the upper threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
-* **-z** (Default: 1): Adjusts the scale of the noise.&#x20;
-* **-s** (Default: -1): Sets the noise seed.&#x20;
-* **-l** (Default: 0): Applies a vertical smear to 3D noise.&#x20;
-* **-o** (Default: (0,0,0)): Offsets the noise generation coordinates by a given vector (X,Y,Z).&#x20;
-* **-c**: When used, centers the noise generation on the world coordinates of the selection.&#x20;
-* **-h**: Activates heightmap mode using 2D noise. \
-  _Heightmap mode is only compatible with Cuboid, Cylinder, or Polygon region types._
-* **-n**: Uses normalized (-1 to 1) selection-centered coordinates for noise generation.
-* **-t**: Enables smooth mode, specifically for snow, water, and lava blocks in the palette \[Applicable only in heightmap mode].
-
-</details>
