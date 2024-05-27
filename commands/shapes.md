@@ -101,7 +101,12 @@ e.g `//ezshapes polydome`
 * **Pattern**: Specifies the block pattern.
 * **Major Radius**: Sets the major radius of the torus.
 * **Minor Radius**: Sets the minor radius of the torus.
-* **Cross Section**: Determines the cross section shape of the torus 
+* **Cross Section**: Determines the cross section shape of the torus:
+  * `CIRCLE`
+  * `DIAMOND`
+  * `ROUNDED_SQUARE`
+  * `SQUARE`
+
 * **-o**: When used, the rotation of the torus aligns with the player's aiming direction
 * **-s**: When used, the players selection will be moved to roughly cover the shape
 
