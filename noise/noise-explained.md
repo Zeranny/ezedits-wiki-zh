@@ -12,7 +12,7 @@ Within the plugin you will find several noise types, with each having different 
 
 Some of the many features that use noise include:
 
-* `//eznoisegen ...` - *Region Commands*
+* `//eznoisegen ...` - *Noisegen Commands*
 * `#eznoisemask` - *Masks*
 * `//ezbrush gradient ...` - *Brushes*
 
