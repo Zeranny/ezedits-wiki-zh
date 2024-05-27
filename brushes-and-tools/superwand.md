@@ -26,5 +26,5 @@ The Super Wand tool offers four distinct modes for point selection and manipulat
   * In point selection modes, removes the last set point.
   * In GRAB mode, drops the point or selection.
 * **Sneak + Left Click**: Cycles through the tool modes.
-* **Swap Hand Key (Default F Key)**: Reverses the order of points in the selection.
-* **Sneak + F**: Shifts all convex selection points along by one position in the list of points.
+* **Swap Hand (Default F Key)**: Reverses the order of points in the selection.
+* **Sneak + Swap Hand (Default F Key)**: Shifts all convex selection points along by one position in the list of points.

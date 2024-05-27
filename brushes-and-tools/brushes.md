@@ -16,10 +16,11 @@ All brushes are contained within the `//ezbrush ...` (`//ezbr`) command.
 
 The `gradient` brush allows you to first define a plane by selecting 2 points, you can then paint with your gradient with blocks chosen based on distance along this plane.
 
-**Left Click to start a plane at your target block**\
-**Sneak + Left Click to start a plane at the player position**\
-**Right Click to set the end of the plane at your target block OR paint palette blocks if the plane is set**\
-**Sneak + Right Click to set the end of the plane at the player position OR paint palette blocks if the plane is set**
+**<u>Left Click</u> to start a plane at your target block**\
+**<u>Sneak + Left Click</u> to start a plane at the player position**\
+**<u>Right Click</u> to set the end of the plane at your target block OR paint palette blocks if the plane is set**\
+**<u>Sneak + Right Click</u> to set the end of the plane at the player position OR paint palette blocks if the plane is set**\
+**<u>Swap Hands (Default F key)</u> to toggle between GLOBAL and PER_ITEM active gradients**
 
 * **Palette**: Specifies the palette to use for the gradient.
 * **Radius** (Default: 8): Sets the radius of the brush.
@@ -43,10 +44,11 @@ The `gradient` brush allows you to first define a plane by selecting 2 points, y
 
 The `gradientstroke` brush allows for gradient application along a path (stroke) defined by selecting points.
 
-**Left Click to add points**\
-**Sneak + Left Click to remove the last point**\
-**Right Click to confirm & place the gradient stroke**\
-**Sneak + Right Click to clear all points**
+**<u>Left Click</u> to add points**\
+**<u>Sneak + Left Click</u> to remove the last point**\
+**<u>Right Click</u> to confirm & place the gradient stroke**\
+**<u>Sneak + Right Click</u> to clear all points**\
+**<u>Swap Hands (Default F key)</u> to toggle between GLOBAL and PER_ITEM active gradients**
 
 * **Palette**: Specifies the block pattern for the gradient.
 * **Radius** (Default: 8): Sets the radius of the brush.
