@@ -12,7 +12,7 @@ All brushes are contained within the `//ezbrush ...` (`//ezbr`) command.
 
 <summary>Gradient Brush</summary>
 
-**`//ezbr gradient <palette> [radius] [interpolation] [strength] [-a] [-n <noise>] [-z <scale>] [-d <distanceFunction>]`**
+**`//ezbr gradient <palette> [radius] [interpolation] [strength] [-av] [-n <noise>] [-z <scale>] [-d <distanceFunction>]`**
 
 The `gradient` brush allows you to first define a plane by selecting 2 points, you can then paint with your gradient with blocks chosen based on distance along this plane.
 
@@ -26,6 +26,7 @@ The `gradient` brush allows you to first define a plane by selecting 2 points, y
 * **Interpolation** (Default: NONE): Determines the type of interpolation used in the gradient transition.
 * **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
 * **-a**: When activated, allows the gradient to replace air blocks.
+* **-v**: Deactivates WorldEditCUI integration.
 * **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
 * **-z \<scale>** (Default: 1): Modifies the scale of the noise.
 * **-d \<distanceFunction>** (Default: NONE): Sets the distance mode changing the brush to work based on distance from the initial block with the given distance function.
@@ -38,7 +39,7 @@ The `gradient` brush allows you to first define a plane by selecting 2 points, y
 
 <summary>Gradient Stroke Brush</summary>
 
-**`//ezbr gradientstroke <palette> [radius] [interpolation] [strength] [-ad] [-n <noise>] [-z <scale>]`**
+**`//ezbr gradientstroke <palette> [radius] [interpolation] [strength] [-adv] [-n <noise>] [-z <scale>]`**
 
 The `gradientstroke` brush allows for gradient application along a path (stroke) defined by selecting points.
 
@@ -53,6 +54,7 @@ The `gradientstroke` brush allows for gradient application along a path (stroke)
 * **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
 * **-a**: When activated, allows the gradient to replace air blocks.
 * **-d**: Activates the 'distance to center' mode which applies the gradient based on distance to the middle of the stroke line instead of distance along the stroke.
+* **-v**: Deactivates WorldEditCUI integration.
 * **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
 * **-z \<scale>** (Default: 1): Modifies the scale of the noise.
 
