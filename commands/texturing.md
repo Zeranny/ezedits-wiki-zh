@@ -158,13 +158,13 @@ Textures a region using a given noise.
 
 <summary>Pointlight Texture</summary>
 
-**`//ezt pointlight <mask> <palette> [range] [radius] [interval] [-l] [-o] [-r][-f]`**
+**`//ezt pointlight <mask> <palette> [falloffRange] [radius] [interval] [-l] [-o] [-r][-f]`**
 
 Textures a region based on the orientation of surfaces relative to a light source.
 
 * **Mask**: Blocks to replace.
 * **Palette**: Specifies the palette to use.
-* **Range** (Default: 0): Sets the falloff range, which is the brightness of the light point. If set to 0, the distance between the player and the region's center is used.
+* **Falloff Range** (Default: 0): Sets the falloff range, which is the brightness of the light point. If set to 0, the distance between the player and the region's centre is used.
 * **Radius** (Default: 1): Specifies the normal approximation radius, affecting the softness of the light's edge.
 * **Interval** (Default: "0,90"): Defines the surface orientation interval in degrees, where 0 is facing directly towards the light, and 180 is facing away. Surfaces within this interval are textured, and any below or above will be textured with the first or last palette block.
 * **-f**: Disables light falloff, applying uniform light intensity across the entire region, regardless of distance from the light source.
