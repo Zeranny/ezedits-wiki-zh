@@ -37,5 +37,6 @@
 * [Shapes](commands/shapes.md)
 * [Smoothing](commands/smoothing.md)
 * [Spline](commands/spline.md)
+* [Stained Glass](commands/stained-glass.md)
 * [Surface](commands/surface.md)
 * [Texturing](commands/texturing.md)

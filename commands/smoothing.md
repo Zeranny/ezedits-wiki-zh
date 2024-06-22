@@ -26,7 +26,7 @@ The `//ezsmooth` command smooths the edges and surfaces of a selected region usi
 
 **`//ezinflate <radius>`**
 
-\`**Alias: //inflate**\`
+**`Alias: //inflate`**
 
 The `//ezinflate` command expands the volume of blocks within a selected region by a specified amount, effectively "inflating" the build.
 
@@ -42,7 +42,7 @@ The `//ezinflate` command expands the volume of blocks within a selected region 
 
 **`//ezdeflate <radius>`**
 
-\`**Alias: //deflate**\`
+**`Alias: //deflate`**
 
 The `//ezdeflate` command contracts the volume of blocks within a selected region by a specified amount, effectively "deflating" the build.
 
@@ -58,7 +58,7 @@ The `//ezdeflate` command contracts the volume of blocks within a selected regio
 
 **`//ezsmoothblocks <radius> <iterations> <bias> [-s] [-t] [-w]`**
 
-**`Alias: //smoothnlocks`**
+**`Alias: //smoothblocks`**
 
 The `//ezsmoothblocks` command modifies a selected region by placing slabs, stairs, and walls to create a significantly smoother surface.
 
