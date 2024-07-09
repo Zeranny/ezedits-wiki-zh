@@ -5,6 +5,7 @@
 ## Getting Started
 
 * [Installing](getting-started/installing.md)
+* [Permissions](getting-started/permissions.md)
 
 ## Palettes
 
