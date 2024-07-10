@@ -1,9 +1,11 @@
-# Spline
+# 样条工具
 
-All sub-commands are under `//ezspline`  (`//ezsp`) \
-e.g `//ezspline beads`
+> 样条是一种通过一组给定点集生成平滑曲线的柔性带。这个概念源于实际生产中的绘图工具“样条”，它是一种富有弹性的细长条。绘图时，用压铁将样条固定在指定的控制点（样点）上，并调整样条使其形成理想的曲线形状，然后沿着样条绘制出曲线。
 
-_Note that every spline can only be run with a Convex Selection type (\`//sel convex\`)._
+所有子命令都在 `//ezspline` (`//ezsp`) 下 \
+例如 `//ezspline beads`
+
+_请注意，每个样条曲线只能在convex选区类型 (`//sel convex`) 下运行。_
 
 ## `//ezspline ...`
 
@@ -11,21 +13,21 @@ _Note that every spline can only be run with a Convex Selection type (\`//sel co
 
 <details>
 
-<summary>Bead Spline</summary>
+<summary>珠子样条</summary>
 
 **`//ezsp beads <pattern> <radii> [-p <kb_parameters>] [-q <quality>]`** \
 **`[-n <normalMode>] [-g] [-h]`**
 
-Generates a beads-shaped spline along the selected convex region.
+沿所选区域生成珠子形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -33,24 +35,24 @@ Generates a beads-shaped spline along the selected convex region.
 
 <details>
 
-<summary>Chain Link Spline</summary>
+<summary>链条样条</summary>
 
 **`//ezsp chainlink <pattern> <radii> [inner] [offset] [stretch] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Generates a chainlink-shaped spline along the selected convex region.
+沿所选convex选区生成链条形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Inner** (Default: 1.0): The inner radius ratio of each link.
-* **Offset** (Default: 0.0): Amount to offset each link by, adjusting the alignment of the links in the chain.
-* **Stretch** (Default: 1.0): The amount to stretch the individual links along the chain.
-* **Spin** (Default: 0.0): Adds twist to the spline.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Inner** (默认值: 1.0): 每个链环的内半径比。
+* **Offset** (默认值: 0.0): 调整每个链环的偏移量，调整链环的对齐方式。
+* **Stretch** (默认值: 1.0): 沿链条拉伸各个链环的量。
+* **Spin** (默认值: 0.0): 增加样条的旋转。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -58,21 +60,21 @@ Generates a chainlink-shaped spline along the selected convex region.
 
 <details>
 
-<summary>Cube Spline</summary>
+<summary>立方体样条</summary>
 
 **`//ezsp cubes <pattern> <radii> [gap] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Generates a spline out of cubes along the selected convex region.
+沿所选convex选区生成由立方体组成的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Gap** (Default: 1.0): Sets the gap between cubes.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Gap** (默认值: 1.0): 设置立方体之间的间隙。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -80,26 +82,26 @@ Generates a spline out of cubes along the selected convex region.
 
 <details>
 
-<summary>Expression Spline</summary>
+<summary>表达式样条</summary>
 
 **`//ezsp expression <pattern> <radii> [spin] <expression> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Generates a spline shaped by the given WorldEdit expression along the selected convex region.
+沿所选convex选区生成由给定 WorldEdit 表达式形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Spin** (Default: 0): Adds twist to the spline.
-* **Expression**: The WorldEdit expression defining the shape of the spline. Supports "x", "y", "z" as variables.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Spin** (默认值: 0): 增加样条的旋转。
+* **Expression**: 定义样条形状的 WorldEdit 表达式。支持 "x"、"y"、"z" 作为变量。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
-Example of an expression spline:\
+表达式样条的示例：\
 `//ezsp expression red 20,5 0 -q 4 z^2+y^2<2-x%2`\
-_Note that the expression must come last_
+_请注意，表达式必须放在最后_
 
 </details>
 
@@ -107,23 +109,23 @@ _Note that the expression must come last_
 
 <details>
 
-<summary>Fishnet Spline</summary>
+<summary>鱼网样条</summary>
 
 **`//ezsp fishnet <pattern> <radii> [spacing] [depth] [width] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Generates a fishnet-shaped spline along the selected convex region.
+沿所选convex选区生成鱼网形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Spacing** (Default: 10): The mesh spacing of the net..
-* **Depth** (Default: 2): The depth of each string within the net.
-* **Width** (Default: 2): The width of each string.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Spacing** (默认值: 10): 网格的间距。
+* **Depth** (默认值: 2): 网格内每根线的深度。
+* **Width** (默认值: 2): 网格内每根线的宽度。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -131,24 +133,24 @@ Generates a fishnet-shaped spline along the selected convex region.
 
 <details>
 
-<summary>Noise Spline</summary>
+<summary>噪声样条</summary>
 
 **`//ezsp noise <pattern> <radii> [strength] [stretch] [spin] <noise> [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Creates a noise-based spline along the selected convex region.
+沿所选convex选区生成基于噪声的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Strength** (Default: 0.5): Determines the noise strength, affecting the intensity of the noise.
-* **Stretch** (Default: 4.0): Controls the stretch factor of noise along the spline.
-* **Spin** (Default: 0): Adds twist to the spline.
-* **Noise** (Default: `Perlin(Freq:3)`): Specifies the type of noise to use for generation.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Strength** (默认值: 0.5): 确定噪声强度，影响噪声的强度。
+* **Stretch** (默认值: 4.0): 控制沿样条的噪声拉伸因子。
+* **Spin** (默认值: 0): 增加样条的旋转。
+* **Noise** (默认值: `Perlin(Freq:3)`): 指定用于生成的噪声类型。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -156,22 +158,22 @@ Creates a noise-based spline along the selected convex region.
 
 <details>
 
-<summary>Oscillation Spline</summary>
+<summary>振荡样条</summary>
 
 **`//ezsp oscillate <pattern> <radii> [depth] [interval] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Generates a spline with an oscillating thickness along the selected convex region.
+沿所选convex选区生成具有振荡厚度的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Depth** (Default: 2): Determines the ridge depth of the oscillation, affecting the amplitude of the waves.
-* **Interval** (Default: 5): Sets the ridge interval, controlling the frequency of the oscillation along the spline.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Depth** (默认值: 2): 确定振荡的波峰深度，影响波的幅度。
+* **Interval** (默认值: 5): 设置波峰间距，控制沿样条的振荡频率。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -179,22 +181,22 @@ Generates a spline with an oscillating thickness along the selected convex regio
 
 <details>
 
-<summary>Polygonal Spline</summary>
+<summary>多边形样条</summary>
 
 **`//ezsp polygon <pattern> <radii> [sides] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Creates a regular polygon-shaped spline along the selected convex region.
+沿所选convex选区生成规则多边形形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **Sides** (Default: 6): Determines the number of sides to the polygon.
-* **Spin** (Default: 0.0): Adds twist to the spline.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **Sides** (默认值: 6): 确定多边形的边数。
+* **Spin** (默认值: 0.0): 增加样条的旋转。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -202,22 +204,22 @@ Creates a regular polygon-shaped spline along the selected convex region.
 
 <details>
 
-<summary>Rope Spline</summary>
+<summary>绳索样条</summary>
 
 **`//ezsp rope <pattern> <radii> [ropeCount] [spin] [-p <kb_parameters>] [-q <quality>] [-n <normalMode>] [-g] [-h]`**
 
-Creates a rope-shaped spline along the selected convex region.
+沿所选convex选区生成绳索形状的样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **RopeCount** (Default: 3): Determines the number of intertwining ropes.
-* **Spin** (Default: 2.0): Adds twist to the spline.
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **RopeCount** (默认值: 3): 确定缠绕的绳索数量。
+* **Spin** (默认值: 2.0): 增加样条的旋转。
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>
 
@@ -225,20 +227,20 @@ Creates a rope-shaped spline along the selected convex region.
 
 <details>
 
-<summary>Simple Spline</summary>
+<summary>简单样条</summary>
 
 **`//ezsp simple <pattern> <radii> [-p <kb_parameters>] [-q <quality>]`** \
 **`[-n <normalMode>] [-g] [-h]`**
 
-Creates a simple cylindrical spline along the selected convex region.
+沿所选convex选区生成简单的圆柱样条。
 
-* **Pattern**: Specifies the block pattern.
-* **Radii**: The thickness of the spline, defined by up to three comma-separated values.\
-  _A radius of 10 will be 10 from the start to the end of the spline, 10,5,15 will start at 10, decreasing to 5 around the middle, and increasing to 15 at the end._
-* **-p** (Default: "0:0:0"): Sets the parameters for the flow of the spline, including tension, bias, and continuity, provided in a colon-separated format.
-* **-q** (Default: 1.85): Adjusts the quality of the spline generation. Increase this value to reduce air gaps, noting that higher values increase processing time.
-* **-n** (Default: "CONSISTENT"): Determines the mode for spline normal calculation.
-* **-g**: When used, calculates the center radii using the geometric center for three radii.
-* **-h**: Shows the help page.
+* **Pattern**: 指定方块模式。
+* **Radii**: 样条的厚度，由最多三个逗号分隔的值定义。\
+  _半径为 10 表示样条从头到尾的半径为 10，10,5,15 表示样条从 10 开始，中间减小到 5，结束时增加到 15。_
+* **-p** (默认值: "0:0:0"): 设置样条流动的参数，包括张力、偏差和连续性，以冒号分隔的格式提供。
+* **-q** (默认值: 1.85): 调整样条生成的质量。增加此值以减少空气间隙，但注意更高的值会增加处理时间。
+* **-n** (默认值: "CONSISTENT"): 确定样条法线计算模式。
+* **-g**: 使用时，使用几何中心计算三个半径的中心。
+* **-h**: 显示帮助页面。
 
 </details>

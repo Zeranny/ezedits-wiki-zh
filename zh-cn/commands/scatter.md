@@ -1,12 +1,12 @@
 ---
-description: Surface Shape Scatterer
+description: 表面形状散布器
 ---
 
-# Scatter
+# 散布器
 
-The `//ezscatter` (`//ezsc`) command scatters a shape across the surface of blocks within your selection.
+`//ezscatter` (`//ezsc`) 命令将一个形状散布在选择区域内的方块表面。
 
-It comes with a number of pre-defined shapes as well as the ability to use WorldEdit expressions to define your own shape.
+它提供了许多预定义的形状，并且可以使用 WorldEdit 表达式定义自己的形状。
 
 {% code overflow="wrap" %}
 ```
@@ -16,11 +16,11 @@ It comes with a number of pre-defined shapes as well as the ability to use World
 
 <details>
 
-<summary><mark style="color:red;"><strong>&#x3C;shape></strong></mark></summary>
+<summary><mark style="color:red;"><strong>&lt;shape&gt;</strong></mark></summary>
 
-**Current shapes**
+**当前形状**
 
-_Additional parameters are given within the parenthesis after a shape._
+_附加参数在形状后的括号内给出。_
 
 * bean
 * cube
@@ -38,34 +38,32 @@ _Additional parameters are given within the parenthesis after a shape._
 * tetrahedron
 * torus(*Thickness*)
 
-In addition to these, you can also define your own shape with a WorldEdit expression
+除了这些，你还可以使用 WorldEdit 表达式定义自己的形状
 
 **`Expression;<expression>`**
-or
+或
 **`Expr;<expression>`**
 
-For example, this expression will create spirals:\
+例如，这个表达式将创建螺旋：\
 `//ezsc expr;x+=sin(2*pi*y)/2;z+=cos(2*pi*y)/2;x*x+z*z<0.3^2`
-
-
 
 </details>
 
-* **Shape**: Specifies the type of shape to scatter.
-* **-s** (Default: "20"): Defines the size of the shapes to scatter. Can specify one size for uniform shapes or three for (X,Y,Z).
-* **-o** (Default: "0.8"): Controls the difference in size between sets of shapes. Set to 1 for constant sizing.
-* **-n** (Default: "2.0%"): Controls how densely the shapes are scattered across the region, as a percentage.
-* **-c** (Default: "0"): Specifies the angle of rotation for the shapes.
-* **-k** (Default: "up"): Determines the axis around which the shape rotates.\
-  If **CONSTANT**:
-  * **-i** (Default: "y"): Defines the primary axis for shape orientation.
-  * **-j** (Default: "x"): Defines the secondary axis for shape orientation.
-* **-d**: Limits placement to specific directions.
-  * **-e** (Default: "0.5"): Strengthens or weakens the directional filter effect.
-* **-m**: Restricts shape placement to surface blocks matching the specified mask.
-* **-p**: Chooses the block palette to use for the scattered shapes. If not set, uses existing blocks.
-* **-a**: Won't place air if enabled.
-* **-b**: Skips placing shapes that partially fall outside the region.
-* **-r**: Aligns shapes with the surface normal.
-* **-u**: Disables uniform seed point distribution, allowing for more random shape placements.
-* **-w**: Removes the original shape, leaving only the scattered shapes.
+* **Shape**: 指定要散布的形状类型。
+* **-s** (默认值: "20"): 定义要散布的形状的大小。可以为均匀形状指定一个大小，也可以为 (X,Y,Z) 指定三个大小。
+* **-o** (默认值: "0.8"): 控制形状组之间的大小差异。设置为 1 表示恒定大小。
+* **-n** (默认值: "2.0%"): 控制形状在区域内的散布密度，以百分比表示。
+* **-c** (默认值: "0"): 指定形状的旋转角度。
+* **-k** (默认值: "up"): 确定形状旋转的轴。
+  如果为 **CONSTANT**：
+  * **-i** (默认值: "y"): 定义形状方向的主要轴。
+  * **-j** (默认值: "x"): 定义形状方向的次要轴。
+* **-d**: 限制放置在特定方向。
+  * **-e** (默认值: "0.5"): 加强或减弱方向过滤效果。
+* **-m**: 限制形状放置在与指定蒙板匹配的表面方块上。
+* **-p**: 选择用于散布形状的方块调色板。如果未设置，则使用现有方块。
+* **-a**: 启用时不放置空气方块。
+* **-b**: 跳过部分落在区域外的形状放置。
+* **-r**: 使形状与表面法线对齐。
+* **-u**: 禁用均匀分布，允许更随机的形状放置。
+* **-w**: 移除原始形状，仅保留散布的形状。

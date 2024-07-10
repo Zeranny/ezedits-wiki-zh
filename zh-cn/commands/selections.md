@@ -1,19 +1,21 @@
-# Selections
+# 选区范围工具
 
-## Selection Commands
+## 选区范围命令
+
+此处的选区范围指代的是选区的框选框架，而不是区域内的方块
 
 ### `//selload`
 
 <details>
 
-<summary>Selection Load</summary>
+<summary>选区范围加载</summary>
 
 **`//selload [selection]`**\
-_Alternate for \`//ezsel load\`_
+_`//ezsel load` 的替代命令_
 
-The `//selload` command retrieves a previously saved selection from the player's saved selection list.
+`//selload` 命令从玩家的保存选区范围列表中检索先前保存的选区范围。
 
-* Selection: A previously saved selection.
+* **Selection**: 一个先前保存的选区范围。
 
 </details>
 
@@ -21,14 +23,14 @@ The `//selload` command retrieves a previously saved selection from the player's
 
 <details>
 
-<summary>Selection Shift</summary>
+<summary>选区范围移动</summary>
 
 **`//next <direction> <gap>`**
 
-The `//next` command shifts your current selection area by its own size in a specified direction.
+`//next` 命令将当前选区范围按其自身的大小向指定方向移动。
 
-* **Direction** (Default: Player AIM): Specifies the direction to shift the selection towards. If not provided, it defaults to the direction the player is aiming.
-* **Gap** (Default: 0): An optional parameter to add an additional gap between the current selection position, and the shifted position.
+* **Direction** (默认值: 玩家瞄准方向): 指定选区范围移动的方向。如果未提供，默认移动到玩家瞄准的方向。
+* **Gap** (默认值: 0): 一个可选参数，用于在当前选区范围位置和移动后的位置之间添加额外的间隙。
 
 </details>
 
@@ -36,18 +38,18 @@ The `//next` command shifts your current selection area by its own size in a spe
 
 <details>
 
-<summary>Move Selection to Player</summary>
+<summary>将选区范围移动到玩家位置</summary>
 
 **`//selhere [selectionPosition]`**
 
-**`Alias: //seltome`**
+**`别名: //seltome`**
 
-The `//selhere` command moves your current selection to your location.
+`//selhere` 命令将当前选区范围移动到玩家的位置。
 
-* **SelectionPosition** (Default: POS1): Specifies which point in the selection to move to the player's position. All other points will be moved to the relative positon.
-  * POS1 - The "Pos1" of the selection, or first point for convex/poly selections.
-  * POS2 - The "Pos2" of the selection, or the last points for convex/poly selections.
-  * CENTER - The center point of the selection
+* **SelectionPosition** (默认值: POS1): 指定选区范围中的哪个点移动到玩家的位置。所有其他点将相对移动。
+  * POS1 - 选区范围的“Pos1”，或convex/poly选区范围的第一个点。
+  * POS2 - 选区范围的“Pos2”，或convex/poly选区范围的最后一个点。
+  * CENTER - 选区范围的中心点。
 
 </details>
 
@@ -55,14 +57,14 @@ The `//selhere` command moves your current selection to your location.
 
 <details>
 
-<summary>Selection Invert</summary>
+<summary>选区范围反转</summary>
 
 **`//ezselinvert`**
 
-**`Alias: //selinvert`**
+**`别名: //selinvert`**
 
-The `//ezselinvert` command reverses the order of points in your current selection.\
-This will be most noticeable with convex selections as with a cuboid selection pos1 and pos2 will simply swap places, whereas a convex selection will reverse the order of every point.
+`//ezselinvert` 命令反转当前选区范围中的pos的顺序。\
+这在convex选区范围中最为明显，因为在长方体选区范围中，pos1 和 pos2 只是交换位置，而在convex选区范围中，所有点的顺序将被反转。
 
 </details>
 
@@ -70,37 +72,35 @@ This will be most noticeable with convex selections as with a cuboid selection p
 
 <details>
 
-<summary>Delete Last Position</summary>
+<summary>删除最后一个位置</summary>
 
 **`//delpos2`**
 
-**`Alias: //-2`**
+**`别名: //-2`**
 
-The `//delpos2` command removes the last secondary selection point for convex and poly selections.
+`//delpos2` 命令删除convex和poly选区范围的最后一个次要选区范围点。
 
 </details>
 
+## 选区范围管理命令
 
-
-## Selection Management Commands
-
-All sub-commands are under `//ezselection`  (`//ezsel`) \
-e.g `//ezsel list`
+所有子命令都在 `//ezselection` (`//ezsel`) 下 \
+例如 `//ezsel list`
 
 ### `list [-g]`
 
-Lists all the user's saved selections. Click a selection name to load.\
-`-g` to group selections by type.
+列出所有用户保存的选区范围。点击选区范围名称进行加载。\
+`-g` 按类型分组选区范围。
 
 ### `load <selection>`
 
-Retrieves a previously saved selection from the player's saved selection list.
+从玩家的保存选区范围列表中检索先前保存的选区范围。
 
 ### `save <selectionName> [-f]`
 
-Saves the user's current selection with a given name.\
-`-f` to override an existing saved selection.
+使用给定的名称保存用户当前的选区范围。\
+`-f` 覆盖现有的保存选区范围。
 
 ### `delete <selectionName>`
 
-Deletes a user's selection with the given name.
+删除用户具有给定名称的选区范围。

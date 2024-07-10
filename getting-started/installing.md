@@ -5,7 +5,8 @@ ezEdits is installed like any other plugin, but requires either WorldEdit or Fas
 * [WorldEdit](https://modrinth.com/plugin/worldedit)
 * [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)
 
-Currently we support Minecraft 1.20+ but it may work on older versions.\
+Currently, we support Minecraft 1.20+ but it may work on older versions.\
+You can use ezEdits 0.9.5(Experimental Support for 1.19) and later versions on 1.19+ servers.\
 If you use 1.20.5+ make sure to update your Java to at least 21.
 
 **You can obtain the .jar file by supporting us on Patreon/Ko-Fi.**

@@ -1,24 +1,24 @@
-# Stained Glass
+# 彩色玻璃
 
-Commands related to using stained glass for color.
+与使用彩色玻璃相关的命令。
 
 ### `//ezstainedglassgradient`
 
 <details>
 
-<summary>Glass Gradient</summary>
+<summary>玻璃渐变</summary>
 
 **`//ezstainedglassgradient <startColor> [endColor] <layers> [length] [quality] [direction] [-c <backgroundColor>] [-bs]`**
 
-**`Aliases: //stainedglassgradient, //glassgradient`**
+**`别名: //stainedglassgradient, //glassgradient`**
 
-* **StartColor**: Specifies the starting color (as a Hex code) for the gradient.
-* **EndColor** (Default: None): Specifies the end color (as a Hex code) for the gradient. If no value is provided, then the start color will be used for the whole gradient.
-* **Layers**: How many layers of glass to use in creating the gradient.
-* **Length** (Default: 1): How many blocks long should the gradient be.
-* **Quality** (Default: 7): How accurate should the gradient be. A higher value may take longer to run.
-* **-c** (Default: #000000): Specifies the background colour (as a Hex code) that the gradient is on if **-b** flag is not used.
-* **-b**: Finds the closest solid block to place behind the glass to increase color accuracy. This is much more resource intensive.
-* **-s**: Skip duplicate layer combinations.
+* **StartColor**: 指定渐变的起始颜色（Hex 代码）。
+* **EndColor** (默认值: 无): 指定渐变的结束颜色（Hex 代码）。如果未提供结束颜色，则整个渐变将使用起始颜色。
+* **Layers**: 用于创建渐变的玻璃层数。
+* **Length** (默认值: 1): 渐变的长度，以方块数为单位。
+* **Quality** (默认值: 7): 渐变的准确性。较高的值可能需要更长的时间来运行。
+* **-c** (默认值: #000000): 指定渐变背景色（Hex 代码），如果未使用 **-b** 标志。
+* **-b**: 找到玻璃后面最近的实心方块以增加颜色准确性。这会消耗更多资源。
+* **-s**: 跳过重复的层组合。
 
 </details>

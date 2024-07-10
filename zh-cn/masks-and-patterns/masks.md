@@ -50,7 +50,7 @@
 
 <details>
 
-<summary>#truelight 光照级别蒙板</summary>
+<summary>#truelight 全光照蒙板</summary>
 
 **`#truelight[光照级别]` or `#truelight[最小级别][最大级别]`**
 
@@ -76,7 +76,7 @@
 
 <details>
 
-<summary>#vectorgradient 矢量梯度蒙板</summary>
+<summary>#vectorgradient 矢量渐变蒙板</summary>
 
 **`#vectorgradientmask[矢量][距离][<噪声预设>][<噪声范围>][噪声种子]`**
 

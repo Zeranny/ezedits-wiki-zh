@@ -30,12 +30,12 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.brush.gradient</td>
-<td><strong>//ezbr gradient</strong><br>将梯度渐变刷绑定到一个物品上</td>
+<td><strong>//ezbr gradient</strong><br>将渐变刷绑定到一个物品上</td>
 <td>Intermediate</td>
 </tr>
 <tr>
 <td>ezedits.brush.gradientstroke</td>
-<td><strong>//ezbr gradientstroke</strong><br>将渐变笔刷绑定到一个物品上</td>
+<td><strong>//ezbr gradientstroke</strong><br>将路径渐变笔刷绑定到一个物品上</td>
 <td>Intermediate</td>
 </tr>
 <tr>
@@ -85,7 +85,7 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.flow.flowfield</td>
-<td><strong>//ezflowfield</strong><br>在选区内生成一个流动场</td>
+<td><strong>//ezflowfield</strong><br>在选区内生成一个流场</td>
 <td>Intermediate</td>
 </tr>
 <tr>
@@ -485,7 +485,7 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.texture.surfaceflow</td>
-<td><strong>//eztexture flow</strong><br>使用表面流动场为区域纹理化</td>
+<td><strong>//eztexture flow</strong><br>使用表面流场为区域纹理化</td>
 <td>Intermediate</td>
 </tr>
 <tr>
