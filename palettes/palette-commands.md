@@ -1,32 +1,30 @@
 # Palette Commands
 
-All sub-commands are under `//ezpalette`  (`//ezp`) \
+All sub-commands are under `//ezpalette` (`//ezp`)\
 e.g `//ezpalette list`
-
-
 
 ## `//ezpalette ...`
 
-### `fetch <fetchMode> <paletteName> [length] [-d <direction>] [-f] [-s]`
+### `fetch <fetchMode> <paletteName> [length] [-d <direction>] [-f]`
 
 <details>
 
 <summary>Fetch Palette</summary>
 
-Saves a user-defined palette with a given name.\
+Saves a user-defined palette with a given name.
+
 * **Fetch Mode**: From where to fetch the palette blocks:
   * **`WORLD`**
-    - Takes the blocks from the player's position
+    * Takes the blocks from the player's position
   * **`SELECTION`**
-    - Takes the blocks from the player's selection
-    - Selection must be 1x1xN in size, where N is the desired palette length
+    * Takes the blocks from the player's selection
+    * Selection must be 1x1xN in size, where N is the desired palette length
   * **`HOTBAR`**
-    - Takes blocks from the player's hotbar
-    - Ignores items and uses default block properties
-
-* **Length** (Default: 0): How many block to fecth. A length of 0 (default) will fetch blocks until air is reached.\
-* **-d **(Default: me): The direction to fetch in. Defaults to the direction the user is facing.\
-* **-f**: When activated, overwrites existing the palette with the same name.
+    * Takes blocks from the player's hotbar
+    * Ignores items and uses default block properties
+* **Length** (Default: 0): How many block to fecth. A length of 0 (default) will fetch blocks until air is reached.
+* **-d** (Default: me): The direction to fetch in. Defaults to the direction the user is facing.
+* **-f**: When activated, overwrites the existing palette with the same name.
 
 <img src="../.gitbook/assets/ezp_fetch.gif" alt="" data-size="original">
 
@@ -34,8 +32,9 @@ Saves a user-defined palette with a given name.\
 
 ### `save <paletteName> <palette> [-f]`
 
-Saves a user-defined palette with a given name.\
-* **-f**: When activated, overwrites existing the palette with the same name.
+Saves a user-defined palette with a given name.
+
+* **-f**: When activated, overwrites the existing palette with the same name.
 
 ### `delete <paletteName>`
 
@@ -57,9 +56,10 @@ Direction defaults to the direction the user is facing.
 
 ### `swap <sourcePalette> <targetPalette> [-a] [-f]`
 
-Region operation which swaps the blocks of the source palette with those of the target palette.\
-* **-a**: Activate to include air blocks (if the source palette contains air).\
-* **-f**: Activate to stretch the tartget palette to match the size of the source palette.
+Region operation which swaps the blocks of the source palette with those of the target palette.
+
+* **-a**: Activate to include air blocks (if the source palette contains air).
+* **-f**: Activate to stretch the target palette to match the size of the source palette.
 
 ### `print <palette> [-v]`
 
