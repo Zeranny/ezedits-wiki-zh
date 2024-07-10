@@ -1,7 +1,7 @@
-# Noisegen
+# 噪声生成
 
-All sub-commands are under `//eznoisegen`  (`//noisegen`, `//ng`) \
-e.g `//ng heightmap`
+所有子命令都在`//eznoisegen` (`//noisegen`, `//ng`) 下 \
+例如 `//ng heightmap`
 
 ## `//eznoisegen ...`
 
@@ -9,21 +9,19 @@ e.g `//ng heightmap`
 
 <details>
 
-
-
-<summary>Heightmap (2D)</summary>
+<summary>高度图</summary>
 
 **`//eznoisegen heightmap <palette> <noise> [height] [-z <zoom>] [-s <seed>] [-o <offset>] [-ct]`**
 
-* **Palette**: Specifies the palette of blocks to use.&#x20;
-* **Noise**: Defines the noise preset to use.&#x20;
-* **Height** (Default: 0): Controls the height from the bottom of your selection. A value of 0 will take the selection's height.
-  _Can place blocks above the selection if the height is great enough_&#x20;&#x20;
-* **-z** (Default: 1): Adjusts the zoom level of the noise.&#x20;
-* **-s** (Default: -1): Sets the noise seed.&#x20;
-* **-o** (Default: (0,0,0)): Offsets the noise generation coordinates by a given vector (X,Y,Z).&#x20;
-* **-c**: When used, centres the noise generation on the world coordinates of the selection.&#x20;
-* **-t**: Enables smooth mode, specifically for snow, water, and lava blocks in the palette \[Applicable only in heightmap mode].
+* **Palette**: 指定要使用的方块调色板。
+* **Noise**: 定义要使用的噪声预设。
+* **Height** (默认值: 0): 控制从选择区域底部开始的高度。值为0将采用选择区域的高度。
+  _如果高度足够大，可以将方块放置在选择区域上方_
+* **-z** (默认值: 1): 调整噪声的缩放级别。
+* **-s** (默认值: -1): 设置噪声种子。
+* **-o** (默认值: (0,0,0)): 按给定的向量（X,Y,Z）偏移噪声生成坐标。
+* **-c**: 使用时，将噪声生成居中于选择区域的世界坐标。
+* **-t**: 启用平滑模式，专为调色板中的雪、水和熔岩方块设计 [仅在高度图模式下适用]。
 
 </details>
 
@@ -31,25 +29,23 @@ e.g `//ng heightmap`
 
 <details>
 
-
-
-<summary>Terrain (3D)</summary>
+<summary>地形（3D）</summary>
 
 **`//eznoisegen terrain <palette> <noise> [height] [strength] [-z <scale>] [-s <seed>] [-l <smear>] [-o <offset>] [-chnt]`**
 
-* **Palette**: Specifies the palette of blocks to use.&#x20;
-* **Noise**: Defines the noise preset to use.&#x20;
-* **Height** (Default: 0): Controls the height from the bottom of your selection. A value of 0 will take the selection's height.
-  _Can place blocks above the selection if the height is great enough_&#x20;
-* **Strength** (Default: 1,0.5,0): Takes up to 3 comma-separated values which controls the strength of noise at various heights:
-  - *`0.5` would be 50% strength everywhere*
-  - *`0.7,0` would be 70% strength at the very bottom and 0% at the top, with everything in-between being a smooth transition*
-  - *`0,1,0` would be 0% strength at the bottom, 100% in the middle, and 0% at the top&#x20;*
-* **-z** (Default: 1): Adjusts the zoom level of the noise.&#x20;
-* **-s** (Default: -1): Sets the noise seed.&#x20;
-* **-l** (Default: 0): Applies a vertical smear to 3D noise.&#x20;
-* **-o** (Default: (0,0,0)): Offsets the noise generation coordinates by a given vector (X,Y,Z).&#x20;
-* **-c**: When used, centres the noise generation on the world coordinates of the selection.
+* **Palette**: 指定要使用的方块调色板。
+* **Noise**: 定义要使用的噪声预设。
+* **Height** (默认值: 0): 控制从选择区域底部开始的高度。值为0将采用选择区域的高度。
+  _如果高度足够大，可以将方块放置在选择区域上方_
+* **Strength** (默认值: 1,0.5,0): 接受最多3个用逗号分隔的值，这些值控制各高度处的噪声强度：
+  - *`0.5`表示各处强度均为50%*
+  - *`0.7,0`表示最底部的强度为70%，顶部为0%，中间为平滑过渡*
+  - *`0,1,0`表示底部强度为0%，中间为100%，顶部为0%*
+* **-z** (默认值: 1): 调整噪声的缩放级别。
+* **-s** (默认值: -1): 设置噪声种子。
+* **-l** (默认值: 0): 应用垂直涂抹到3D噪声。
+* **-o** (默认值: (0,0,0)): 按给定的向量（X,Y,Z）偏移噪声生成坐标。
+* **-c**: 使用时，将噪声生成居中于选择区域的世界坐标。
 
 </details>
 
@@ -57,23 +53,22 @@ e.g `//ng heightmap`
 
 <details>
 
-
-<summary>Advanced</summary>
+<summary>高级噪声源</summary>
 
 **`//eznoisegen <palette> <noise> [lowerThreshold] [upperThreshold] [-z <scale>] [-s <seed>] [-l <smear>] [-o <offset>] [-chnt]`**
 
-* **Palette**: Specifies the palette of blocks to use.&#x20;
-* **Noise**: Defines the noise preset to use.&#x20;
-* **Lower Threshold** (Default: 0): Sets the lower threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
-* **Upper Threshold** (Default: 0.5): Sets the upper threshold for noise generation, with support for WorldEdit expressions (range: 0-1.0).&#x20;
-* **-z** (Default: 1): Adjusts the zoom level of the noise.&#x20;
-* **-s** (Default: -1): Sets the noise seed.&#x20;
-* **-l** (Default: 0): Applies a vertical smear to 3D noise.&#x20;
-* **-o** (Default: (0,0,0)): Offsets the noise generation coordinates by a given vector (X,Y,Z).&#x20;
-* **-c**: When used, centres the noise generation on the world coordinates of the selection.&#x20;
-* **-h**: Activates heightmap mode using 2D noise. \
-  _Heightmap mode is only compatible with Cuboid, Cylinder, or Polygon region types._
-* **-n**: Uses normalized (-1 to 1) selection-centred coordinates for noise generation.
-* **-t**: Enables smooth mode, specifically for snow, water, and lava blocks in the palette \[Applicable only in heightmap mode].
+* **Palette**: 指定要使用的方块调色板。
+* **Noise**: 定义要使用的噪声预设。
+* **Lower Threshold** (默认值: 0): 设置噪声生成的下阈值，支持WorldEdit表达式（范围：0-1.0）。
+* **Upper Threshold** (默认值: 0.5): 设置噪声生成的上阈值，支持WorldEdit表达式（范围：0-1.0）。
+* **-z** (默认值: 1): 调整噪声的缩放级别。
+* **-s** (默认值: -1): 设置噪声种子。
+* **-l** (默认值: 0): 应用垂直涂抹到3D噪声。
+* **-o** (默认值: (0,0,0)): 按给定的向量（X,Y,Z）偏移噪声生成坐标。
+* **-c**: 使用时，将噪声生成居中于选择区域的世界坐标。
+* **-h**: 使用2D噪声激活高度图模式。\
+  _高度图模式仅兼容长方体、圆柱体或多边形区域类型。_
+* **-n**: 使用归一化（-1到1）选择居中坐标进行噪声生成。
+* **-t**: 启用平滑模式，专为调色板中的雪、水和熔岩方块设计 [仅在高度图模式下适用]。
 
 </details>

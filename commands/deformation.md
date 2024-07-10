@@ -1,7 +1,7 @@
-# Deformation
+# 变形
 
-All sub-commands are under `//ezdeform`  (`//ezd`) \
-e.g `//ezdeform hexagonalize`
+所有子命令都在`//ezdeform` (`//ezd`) 下 \
+例如 `//ezdeform hexagonalize`
 
 ## `//ezdeform ...`
 
@@ -9,15 +9,17 @@ e.g `//ezdeform hexagonalize`
 
 <details>
 
-<summary>Hexagonalize</summary>
+<summary>六边形化</summary>
 
-**`//ezdeform hexagonalize [size] [air_gap] [x_rotation] [z_rotation] [offset_angle]`**&#x20;
+**`//ezdeform hexagonalize [大小] [空气间隙] [x轴旋转角度] [z轴旋转角度] [偏移角度]`**
 
-* **Size** (Default: 12): Sets the size of hexagons.&#x20;
-* **Air Gap** (Default: 0.0): Defines the width of the air gap between columns.&#x20;
-* **X Rotation** (Default: 0.0): Sets the column rotation angle along the X-axis, in degrees.&#x20;
-* **Z Rotation** (Default: 0.0): Sets the column rotation angle along the Z-axis, in degrees.&#x20;
-* **Offset Angle** (Default: 60.0): Adjusts the offset angle, controlling the shape (range: 0-90 degrees).
+* **大小** (默认值: 12): 设置六边形的大小。
+* **空气间隙** (默认值: 0.0): 定义柱子之间的空气间隙宽度。
+* **x轴旋转角度** (默认值: 0.0): 设置柱子沿X轴的旋转角度，单位为度。
+* **z轴旋转角度** (默认值: 0.0): 设置柱子沿Z轴的旋转角度，单位为度。
+* **偏移角度** (默认值: 60.0): 调整偏移角度，控制形状（范围：0-90度）。
+
+![](https://cloud.alsace.team/Picture/pic/20240709220045.png?imageMogr2/format)
 
 </details>
 
@@ -25,16 +27,16 @@ e.g `//ezdeform hexagonalize`
 
 <details>
 
-<summary>Noise</summary>
+<summary>噪声</summary>
 
-**`//ezdeform noise <noise> [strength] [-z <scale>] [-s <seed>]`**
+**`//ezdeform noise <噪声> [强度] [-z <范围>] [-s <种子>]`**
 
-* **Noise**: Specifies the type of noise to use for deformation.&#x20;
-* **Strength** (Default: 2.0): Sets the strength of the noise effect.&#x20;
-* **Scale** (Default: 1): Determines the scale of the noise.&#x20;
-* **-s** (Default: -1): Optional seed for the noise pattern.&#x20;
-* **-h**: When used, only deforms the region horizontally.&#x20;
-* **-v**: When used, only deforms the region vertically.
+* **噪声**: 指定用于变形的噪声类型。
+* **强度** (默认值: 2.0): 设置噪声效果的强度。
+* **范围** (默认值: 1): 确定噪声的比例。
+* **-s** (默认值: -1): 噪声模式的可选种子。
+* **-h**: 使用时，仅水平变形区域。
+* **-v**: 使用时，仅垂直变形区域。
 
 </details>
 
@@ -42,12 +44,14 @@ e.g `//ezdeform hexagonalize`
 
 <details>
 
-<summary>Rotate</summary>
+<summary>旋转</summary>
 
-**`//ezdeform rotate <angle> [-o]`**&#x20;
+**`//ezdeform rotate <角度> [-o]`**
 
-* **Angle**: Sets the angle of rotation, in degrees.&#x20;
-* **-o**: When used, uses the player's position as the center of rotation instead of the selection's center.
+以选区为中心，旋转选区
+
+* **Angle**: 设置旋转角度，单位为度。
+* **-o**: 使用时，以玩家的位置作为旋转中心，而不是选择区域的中心。
 
 </details>
 
@@ -57,11 +61,13 @@ e.g `//ezdeform hexagonalize`
 
 <summary>Voronoialize</summary>
 
-**`//ezdeform voronoialize [size] [air_gap] [-s <seed>]`**
+**`//ezdeform voronoialize [大小] [a空气间隙] [-s <种子>]`**
 
-* **Size** (Default: 12): Determines the size of the voronoi cells.&#x20;
-* **Air Gap** (Default: 0.0): Specifies the width of the air gap between cells.&#x20;
-* **-s** (Default: -1): Optional seed for generating the pattern.
+* **大小** (默认值: 12): 确定voronoialize单元的大小。
+* **空气间隙** (默认值: 0.0): 指定单元之间的空气间隙宽度。
+* **-s** (默认值: -1): 生成模式的可选种子。
+
+![](https://cloud.alsace.team/Picture/pic/20240709221059.png?imageMogr2/format)
 
 </details>
 
@@ -69,15 +75,15 @@ e.g `//ezdeform hexagonalize`
 
 <details>
 
-<summary>Placeholder Name</summary>
+<summary>Voronoialize2</summary>
 
-**`//ezdeform voronoialize2 <amount> [air_gap] [-s <seed>] [-r <seed_repulsion>] [-n <normalOffset>]`**
+**`//ezdeform voronoialize2 <数量> [空气间隙] [-s <种子>] [-r <种子排斥>] [-n <偏移>]`**
 
-* **Amount**: Specifies the cell amount in the voronoi pattern.&#x20;
-* **Air Gap** (Default: 0.0): Determines the width of the air gap between cells.&#x20;
-* **-s** (Default: -1): Optional seed for generating the pattern.&#x20;
-* **-r** (Default: 15): Sets the voronoi seed point repulsion factor.&#x20;
-* **-n** (Default: 5): Adjusts the normal offset factor, which can be decreased for thinner shapes.
+* **Amount**: 指定voronoialize中的单元数量。
+* **Air Gap** (默认值: 0.0): 确定单元之间的空气间隙宽度。
+* **-s** (默认值: -1): 生成模式的可选种子。
+* **-r** (默认值: 15): 设置voronoialize种子点排斥因子。
+* **-n** (默认值: 5): 调整法线偏移因子，可以减少以获得更薄的形状。
 
 </details>
 
@@ -85,17 +91,19 @@ e.g `//ezdeform hexagonalize`
 
 <details>
 
-<summary>Voxelize</summary>
+<summary>体素化</summary>
 
-**`//ezdeform voxelize <scales> <gap> <distortion> [-i <primary>] [-j <secondary>] [-s <seed>] [-hv]`**
+**`//ezdeform voxelize <比例> <空气间隙> <强度> [-i <主要轴>] [-j <次要轴>] [-s <种子>] [-hv]`**
 
-* **Scales** (Default: 3,3,3): Sets the scale for each dimension.&#x20;
-* **Gap** (Default: 0.0): Defines the width of the air gap between voxels.
-* **Distortion** (Default: 0.0): Adjusts the strength of random grid distortion (range: 0-1).&#x20;
-* **-i** (Default: y): Specifies the primary axis for grid rotation.&#x20;
-* **-j** (Default: -x): Specifies the secondary axis for grid rotation.&#x20;
-* **-s** (Default: -1): Optional seed for random distortion.&#x20;
-* **-h**: When used, only voxelizes horizontally.&#x20;
-* **-v**: When used, only voxelizes vertically.
+* **比例** (默认值: 3,3,3): 设置每个维度的比例。
+* **空气间隙** (默认值: 0.0): 定义体素之间的空气间隙宽度。
+* **强度** (默认值: 0.0): 调整随机网格变形的强度（范围：0-1）。
+* **-i** (默认值: y): 指定网格旋转的主要轴。
+* **-j** (默认值: -x): 指定网格旋转的次要轴。
+* **-s** (默认值: -1): 随机变形的可选种子。
+* **-h**: 只进行体素化。
+* **-v**: 只进行垂直体化。
+
+![](https://cloud.alsace.team/Picture/pic/20240709221524.png?imageMogr2/format)
 
 </details>

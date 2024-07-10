@@ -4,21 +4,20 @@
 
 <details>
 
-<summary>#near Mask</summary>
+<summary>#near 临近蒙板</summary>
 
-**`#near[mask][distance]`**\
-**`#near[mask][minDistance][maxDistance]`**\
-\
-Masks to all blocks within a given spherical (euclidean) distance of a mask.\
-Doesn't modify blocks which match the inner `mask`.\
-Can also be set to exclude blocks closer than the minimum distance.\
+**`#near[蒙板][距离]`**\
+**`#near[蒙板][最小距离][最大距离]`**
 
+在给定的球形（欧几里得）距离内匹配所有方块。\
+不修改与内层`mask`匹配的方块。\
+也可以设置为排除比最小距离更近的方块。
 
-![](../.gitbook/assets/mask\_near\_mask.gif) **`[mask]`**
+<img src="../../.gitbook/assets/mask_near_mask.gif" alt=""/> **`[mask]`**
 
-<img src="../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
+<img src="../../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
 
-<img src="../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
+<img src="../../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
 
 </details>
 
@@ -26,11 +25,11 @@ Can also be set to exclude blocks closer than the minimum distance.\
 
 <details>
 
-<summary>#aim Mask</summary>
+<summary>#aim 目标蒙板</summary>
 
-Takes the block the player is aiming at as the mask.
+将玩家瞄准的方块作为蒙板。
 
-<img src="../.gitbook/assets/aimMask.gif" alt="" data-size="original">
+<img src="../../.gitbook/assets/aimMask.gif" alt="" data-size="original">
 
 </details>
 
@@ -38,12 +37,12 @@ Takes the block the player is aiming at as the mask.
 
 <details>
 
-<summary>#blocklight Mask</summary>
+<summary>#blocklight 方块光照蒙板</summary>
 
-**`#blocklight[lightLevel]` or `#blocklight[minLevel][maxLevel]`**
+**`#blocklight[光照级别]` or `#blocklight[最小级别][最大级别]`**
 
-Masks to blocks of a given block light (Illimunation provided by light sources other than skylight).
-Optionally takes a minimum and maximum light level, matching any level within that range.
+按给定的方块光照（由除天空光照外的光源提供的照明）匹配方块。
+可以选择设置最小和最大光照级别，匹配该范围内的任何级别。
 
 </details>
 
@@ -51,12 +50,12 @@ Optionally takes a minimum and maximum light level, matching any level within th
 
 <details>
 
-<summary>#truelight Mask</summary>
+<summary>#truelight 全光照蒙板</summary>
 
-**`#truelight[lightLevel]` or `#truelight[minLevel][maxLevel]`**
+**`#truelight[光照级别]` or `#truelight[最小级别][最大级别]`**
 
-Masks to blocks of a given total light level (Illimunation provided by any light sources including skylight).
-Optionally takes a minimum and maximum light level, matching any level within that range.
+按给定的总光照级别（包括天空光照在内的任何光源提供的照明）匹配方块。
+可以选择设置最小和最大光照级别，匹配该范围内的任何级别。
 
 </details>
 
@@ -64,12 +63,12 @@ Optionally takes a minimum and maximum light level, matching any level within th
 
 <details>
 
-<summary>#eznoise Mask</summary>
+<summary>#eznoise 噪声蒙板</summary>
 
-**`#eznoisemask[noisePreset][<scale>][<threshold>][<seed>]`**\
-**Alias: `#eznm`**
+**`#eznoisemask[噪声预设][<范围>][<threshold>][<种子>]`**\
+**别名: `#eznm`**
 
-Uses a noise preset values `0.0-1.0` to match blocks above a given noise threshold.
+使用噪声预设值`0.0-1.0`来匹配超过给定噪声阈值的方块。
 
 </details>
 
@@ -77,14 +76,14 @@ Uses a noise preset values `0.0-1.0` to match blocks above a given noise thresho
 
 <details>
 
-<summary>#vectorgradient Mask</summary>
+<summary>#vectorgradient 矢量渐变蒙板</summary>
 
-**`#vectorgradientmask[vector][distance][<noisePreset>][<noiseScale>][noiseSeed]`**
+**`#vectorgradientmask[矢量][距离][<噪声预设>][<噪声范围>][噪声种子]`**
 
-Shorthand: `#vgradientm`
+简写: `#vgradientm`
 
-Masks blocks along a vector with a given distance length. With closer blocks more likely to pass the mask check. \
-Compatible with noise presets.
+沿向量匹配给定距离长度的方块。距离越近的方块通过蒙板检查的可能性越大。\
+兼容噪声预设。
 
 </details>
 
@@ -92,17 +91,16 @@ Compatible with noise presets.
 
 <details>
 
-<summary>#attached mask</summary>
+<summary>#attached 附属蒙板</summary>
 
-**`#attached[<vector,vector,vector ...>]`**
+**`#attached[<向量,向量,向量 ...>]`**
 
-Masks to blocks which are attached to at least 1 adjacent non-air block.
+匹配至少连接一个相邻非空气方块的方块。
 
-Optionally takes a list of direction vectors to check instead of every side.\
-e.g `#attached[up,down,left,north]`
+可选择设置方向向量列表进行检查，而不是检查每个面。\
+例如 `#attached[up,down,left,north]`
 
-\
-In either case, attached means that the block is "touching" the adjacent block. So a bottom slab would not pass `#attached[up]` whereas a lantern with the state `[hanging=true]` would.
+在任一种情况下，连接意味着方块“接触”相邻方块。因此，下部台阶不会通过`#attached[up]`，而状态为`[hanging=true]`的灯笼会通过。
 
 </details>
 
@@ -110,11 +108,11 @@ In either case, attached means that the block is "touching" the adjacent block. 
 
 <details>
 
-<summary>#fullblock mask</summary>
+<summary>#fullblock 完整方块蒙板</summary>
 
-Masks to blocks which fill an entire cube space.
+匹配填满整个立方空间的方块。
 
-e.g 1-7 layers of snow will not pass, but 8 layers of snow, a block like stone, or a transparent block like glass will pass.
+例如，1-7层的雪不会通过，但8层的雪、像石头一样的方块或像玻璃一样的透明方块会通过蒙板检查。
 
 </details>
 
@@ -122,14 +120,14 @@ e.g 1-7 layers of snow will not pass, but 8 layers of snow, a block like stone, 
 
 <details>
 
-<summary>#palette mask</summary>
+<summary>#palette 调色板蒙板</summary>
 
-**`#palette[palette][<strict>]`**
+**`#palette[调色板][<strict>]`**
 
-Masks to blocks which match any block in the palette.
+匹配与调色板中的任何方块相符的方块。
 
-Optional `<strict>` value of True or False to determine if block data must also match.\
-e.g `oak_stairs[facing=east]` will only match with `oak_stairs[facing=west]` if strict is set to **False**.
+可选的`<strict>`值为True或False，以确定方块数据是否也必须匹配。\
+例如 `oak_stairs[facing=east]` 只有在`strict`设置为**False**时才会与`oak_stairs[facing=west]`匹配。
 
 </details>
 
@@ -137,13 +135,13 @@ e.g `oak_stairs[facing=east]` will only match with `oak_stairs[facing=west]` if 
 
 <details>
 
-<summary>#fuzzypalette mask</summary>
+<summary>#fuzzypalette 模糊调色板蒙板</summary>
 
-**`#fuzzypalette[palette]`**
+**`#fuzzypalette[调色板]`**
 
-Shorthand: **`#fpalette`**
+简写: **`#fpalette`**
 
-Masks to blocks which match any block in the palette, regardless of block data.\
-Equivalent to **`#palette[palette][False]`**
+匹配与调色板中的任何方块相符的方块，不考虑方块数据。\
+等效于 **`#palette[palette][False]`**
 
 </details>

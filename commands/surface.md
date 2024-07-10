@@ -1,7 +1,7 @@
 # Surface
 
-All sub-commands are under `//ezsurface`  (`//ezsu`) \
-e.g `//ezsurface rockify`
+所有子命令都在 `//ezsurface` (`//ezsu`) 下 \
+例如 `//ezsurface rockify`
 
 ## `//ezsurface ...`
 
@@ -9,20 +9,20 @@ e.g `//ezsurface rockify`
 
 <details>
 
-<summary>Fuzzify Surface</summary>
+<summary>模糊化表面</summary>
 
 **`//ezsu fuzzify <radius> [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]`**
 
-Uses white noise to make the surface appear more fuzzy.
+使用白噪声使表面显得更加模糊。
 
-* **Radius**: A float value determining the maximum distance from the surface that modifications can occur.
-* **Smooth Radius** (Default: 0): Specifies the radius for smoothing operations.
-* **Smooth Iterations** (Default: 0): Determines how many times the smoothing operation is applied.
-* **-c**: Restricts modifications to only carve into the terrain.
-* **-e**: Limits the operation to only expand out from the terrain.
-* **-m**: Applies a mask to only modify surfaces that match the specified criteria. \
-  This option can significantly slow down the process due to the added complexity of matching surfaces.
-* **-t**: Tries to retain the topology of the region.
+* **Radius**: 一个浮点值，确定从表面可以进行修改的最大距离。
+* **Smooth Radius** (默认值: 0): 指定平滑操作的半径。
+* **Smooth Iterations** (默认值: 0): 确定平滑操作的应用次数。
+* **-c**: 限制修改仅雕刻地形。
+* **-e**: 限制操作仅从地形向外扩展。
+* **-m**: 应用一个蒙板，仅修改匹配指定标准的表面。\
+  由于匹配表面的复杂性，此选项可能会显著减慢过程。
+* **-t**: 尝试保持区域的拓扑结构。
 
 </details>
 
@@ -30,22 +30,22 @@ Uses white noise to make the surface appear more fuzzy.
 
 <details>
 
-<summary>Rockify Surface</summary>
+<summary>岩石化表面</summary>
 
 **`//ezsu rockify <radius> [size] [oct] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]`**
 
-Uses Perlin noise to make a surface rocky.
+使用柏林噪声使表面变得岩石化。
 
-* **Radius**: A float value determining the maximum distance from the surface that modifications can occur.
-* **Noise Size** (Default: 10): Controls the scale of the noise used.
-* **Noise Octaves** (Default: 1): Sets the number of layers of noise applied.
-* **Smooth Radius** (Default: 1): Specifies the radius for smoothing operations.
-* **Smooth Iterations** (Default: 4): Determines how many times the smoothing operation is applied.
-* **-c**: Restricts modifications to only carve into the terrain.
-* **-e**: Limits the operation to only expand out from the terrain.
-* **-m**: Applies a mask to only modify surfaces that match the specified criteria. \
-  This option can significantly slow down the process due to the added complexity of matching surfaces.
-* **-t**: Tries to retain the topology of the region.
+* **Radius**: 一个浮点值，确定从表面可以进行修改的最大距离。
+* **Noise Size** (默认值: 10): 控制噪声的规模。
+* **Noise Octaves** (默认值: 1): 设置应用的噪声层数。
+* **Smooth Radius** (默认值: 1): 指定平滑操作的半径。
+* **Smooth Iterations** (默认值: 4): 确定平滑操作的应用次数。
+* **-c**: 限制修改仅雕刻地形。
+* **-e**: 限制操作仅从地形向外扩展。
+* **-m**: 应用一个蒙板，仅修改匹配指定标准的表面。\
+  由于匹配表面的复杂性，此选项可能会显著减慢过程。
+* **-t**: 尝试保持区域的拓扑结构。
 
 </details>
 
@@ -53,21 +53,21 @@ Uses Perlin noise to make a surface rocky.
 
 <details>
 
-<summary>Voronoify Surface</summary>
+<summary>Voronoi 化表面</summary>
 
 **`//ezsu voronoify <radius> [cell_size] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]`**
 
-Uses Voronoi noise to deform a surface.
+使用 Voronoi 噪声变形表面。
 
-* **Radius**: A float value determining the maximum distance from the surface that modifications can occur.
-* **Cell Size** (Default: 12): Determines the average size of each cell in the Voronoi pattern, affecting the scale of the texture.
-* **Smooth Radius** (Default: 0): Specifies the radius for smoothing operations.
-* **Smooth Iterations** (Default: 0): Determines how many times the smoothing operation is applied.
-* **-c**: Restricts modifications to only carve into the terrain.
-* **-e**: Limits the operation to only expand out from the terrain.
-* **-m**: Applies a mask to only modify surfaces that match the specified criteria. \
-  This option can significantly slow down the process due to the added complexity of matching surfaces.
-* **-t**: Tries to retain the topology of the region.
+* **Radius**: 一个浮点值，确定从表面可以进行修改的最大距离。
+* **Cell Size** (默认值: 12): 决定 Voronoi 图案中每个单元的平均大小，影响纹理的尺度。
+* **Smooth Radius** (默认值: 0): 指定平滑操作的半径。
+* **Smooth Iterations** (默认值: 0): 确定平滑操作的应用次数。
+* **-c**: 限制修改仅雕刻地形。
+* **-e**: 限制操作仅从地形向外扩展。
+* **-m**: 应用一个蒙板，仅修改匹配指定标准的表面。\
+  由于匹配表面的复杂性，此选项可能会显著减慢过程。
+* **-t**: 尝试保持区域的拓扑结构。
 
 </details>
 
@@ -75,21 +75,21 @@ Uses Voronoi noise to deform a surface.
 
 <details>
 
-<summary>Noiseify Surface</summary>
+<summary>噪声化表面</summary>
 
 **`//ezsu noisify <radius> <noise> [scale] [smooth_radius] [smooth_iterations] [-c] [-e] [-m] [-t]`**
 
-Uses a noise preset to deform a surface.
+使用噪声预设变形表面。
 
-* **Radius**: A float value determining the maximum distance from the surface that modifications can occur.
-* **Noise**: Specifies the noise to use for the modification.
-* **Scale** (Default: 1): Adjusts the scale of the noise.
-* **Smooth Radius** (Default: 1): Specifies the radius for smoothing operations.
-* **Smooth Iterations** (Default: 4): Determines how many times the smoothing operation is applied.
-* **-c**: Restricts modifications to only carve into the terrain.
-* **-e**: Limits the operation to only expand out from the terrain.
-* **-m**: Applies a mask to only modify surfaces that match the specified criteria. \
-  This option can significantly slow down the process due to the added complexity of matching surfaces.
-* **-t**: Tries to retain the topology of the region.
+* **Radius**: 一个浮点值，确定从表面可以进行修改的最大距离。
+* **Noise**: 指定用于修改的噪声。
+* **Scale** (默认值: 1): 调整噪声的比例。
+* **Smooth Radius** (默认值: 1): 指定平滑操作的半径。
+* **Smooth Iterations** (默认值: 4): 确定平滑操作的应用次数。
+* **-c**: 限制修改仅雕刻地形。
+* **-e**: 限制操作仅从地形向外扩展。
+* **-m**: 应用一个蒙板，仅修改匹配指定标准的表面。\
+  由于匹配表面的复杂性，此选项可能会显著减慢过程。
+* **-t**: 尝试保持区域的拓扑结构。
 
 </details>

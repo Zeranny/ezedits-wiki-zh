@@ -1,43 +1,43 @@
-# Table of contents
+# 目录
 
 * [ezEdits Docs](README.md)
 
-## Getting Started
+## 快速开始
 
-* [Installing](getting-started/installing.md)
-* [Permissions](getting-started/permissions.md)
+* [安装](getting-started/installing.md)
+* [权限节点](getting-started/permissions.md)
 
-## Palettes
+## 调色板
 
-* [Palettes Explained](palettes/palettes-explained.md)
-* [Palette Commands](palettes/palette-commands.md)
+* [调色板说明](palettes/palettes-explained.md)
+* [调色板命令](palettes/palette-commands.md)
 
-## Noise
+## 噪声
 
-* [Noise Explained](noise/noise-explained.md)
-* [Noise Commands](noise/noise-commands.md)
+* [噪声说明](noise/noise-explained.md)
+* [噪声命令](noise/noise-commands.md)
 
-## Masks & Patterns
+## 蒙板和图案
 
-* [Masks](masks-and-patterns/masks.md)
-* [Patterns](masks-and-patterns/patterns.md)
+* [蒙板](masks-and-patterns/masks.md)
+* [图案](masks-and-patterns/patterns.md)
 
-## Brushes & Tools
+## 笔刷和工具
 
-* [Brushes](brushes-and-tools/brushes.md)
-* [Superwand](brushes-and-tools/superwand.md)
+* [笔刷](brushes-and-tools/brushes.md)
+* [超级选区工具](brushes-and-tools/superwand.md)
 
-## Commands
+## 命令
 
-* [Deformation](commands/deformation.md)
-* [Flowfields](commands/flowfields.md)
-* [Noisegen](commands/noisegen.md)
-* [Region](commands/region.md)
-* [Scatter](commands/scatter.md)
-* [Selections](commands/selections.md)
-* [Shapes](commands/shapes.md)
-* [Smoothing](commands/smoothing.md)
-* [Spline](commands/spline.md)
-* [Stained Glass](commands/stained-glass.md)
-* [Surface](commands/surface.md)
-* [Texturing](commands/texturing.md)
+* [变形](commands/deformation.md)
+* [流动场](commands/flowfields.md)
+* [噪声生成](commands/noisegen.md)
+* [区域操作](commands/region.md)
+* [散布器](commands/scatter.md)
+* [选区范围](commands/selections.md)
+* [几何生成](commands/shapes.md)
+* [平滑](commands/smoothing.md)
+* [拉线工具](commands/spline.md)
+* [彩色玻璃](commands/stained-glass.md)
+* [表面](commands/surface.md)
+* [纹理](commands/texturing.md)

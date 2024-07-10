@@ -1,8 +1,6 @@
-# Brushes
+# 笔刷
 
-All brushes are contained within the `//ezbrush ...` (`//ezbr`) command.
-
-
+所有刷子都包含在`//ezbrush ...` (`//ezbr`)命令中。
 
 ## `//ezbrush ...`
 
@@ -10,27 +8,27 @@ All brushes are contained within the `//ezbrush ...` (`//ezbr`) command.
 
 <details>
 
-<summary>Gradient Brush</summary>
+<summary>渐变笔刷</summary>
 
-**`//ezbr gradient <palette> [radius] [interpolation] [strength] [-av] [-n <noise>] [-z <scale>] [-d <distanceFunction>]`**
+**`//ezbr gradient <调色板> [半径] [插值] [强度] [-av] [-n <噪声>] [-z <范围>] [-d <距离函数>]`**
 
-The `gradient` brush allows you to first define a plane by selecting 2 points, you can then paint with your gradient with blocks chosen based on distance along this plane.
+渐变笔刷允许您首先通过选择两个点定义一个平面，然后您可以在此平面上基于距离选择方块来绘制渐变。
 
-**<u>Left Click</u> to start a plane at your target block**\
-**<u>Sneak + Left Click</u> to start a plane at the player position**\
-**<u>Right Click</u> to set the end of the plane at your target block OR paint palette blocks if the plane is set**\
-**<u>Sneak + Right Click</u> to set the end of the plane at the player position OR paint palette blocks if the plane is set**\
-**<u>Swap Hands (Default F key)</u> to toggle between GLOBAL and PER_ITEM active gradients**
+**<u>左键点击</u>在目标方块处开始一个平面**\
+**<u>潜行+左键点击</u>在玩家位置开始一个平面**\
+**<u>右键点击</u>在目标方块处设置平面终点或如果平面已设置则绘制调色板方块**\
+**<u>潜行+右键点击</u>在玩家位置设置平面终点或如果平面已设置则绘制调色板方块**\
+**<u>交换主副手(默认F键)</u>在全局和每个物品的活动渐变之间切换**
 
-* **Palette**: Specifies the palette to use for the gradient.
-* **Radius** (Default: 8): Sets the radius of the brush.
-* **Interpolation** (Default: NONE): Determines the type of interpolation used in the gradient transition.
-* **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
-* **-a**: When activated, allows the gradient to replace air blocks.
-* **-v**: Deactivates WorldEditCUI integration.
-* **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
-* **-z \<scale>** (Default: 1): Modifies the scale of the noise.
-* **-d \<distanceFunction>** (Default: NONE): Sets the distance mode changing the brush to work based on distance from the initial block with the given distance function.
+* **调色板**: 指定用于渐变的调色板。
+* **半径** (默认值: 8): 设置刷子的半径。
+* **插值** (默认值: NONE): 确定渐变过渡中使用的插值类型。
+* **强度** (默认值: 0.5): 调整插值的强度，正常范围为0到1。
+* **-a**: 激活时，允许渐变替换空气方块。
+* **-v**: 禁用WorldEditCUI集成。
+* **-n \<噪声>** (默认值: `White()`): 为渐变效果添加基础噪声字段。
+* **-z \<范围>** (默认值: 1): 修改噪声的比例。
+* **-d \<距离函数>** (默认值: NONE): 设置距离模式，使刷子根据初始方块的距离与给定的距离函数一起工作。
 
 </details>
 
@@ -38,27 +36,27 @@ The `gradient` brush allows you to first define a plane by selecting 2 points, y
 
 <details>
 
-<summary>Gradient Stroke Brush</summary>
+<summary>路径渐变笔刷</summary>
 
-**`//ezbr gradientstroke <palette> [radius] [interpolation] [strength] [-adv] [-n <noise>] [-z <scale>]`**
+**`//ezbr gradientstroke <调色板> [半径] [插值] [强度] [-adv] [-n <噪声>] [-z <范围>]`**
 
-The `gradientstroke` brush allows for gradient application along a path (stroke) defined by selecting points.
+路径渐变笔刷允许沿着通过选择点定义的路径（笔触）应用渐变。
 
-**<u>Left Click</u> to add points**\
-**<u>Sneak + Left Click</u> to remove the last point**\
-**<u>Right Click</u> to confirm & place the gradient stroke**\
-**<u>Sneak + Right Click</u> to clear all points**\
-**<u>Swap Hands (Default F key)</u> to toggle between GLOBAL and PER_ITEM active gradients**
+**<u>左键点击</u>添加点**\
+**<u>潜行+左键点击</u>移除最后一个点**\
+**<u>右键点击</u>确认并放置渐变笔触**\
+**<u>潜行+右键点击</u>清除所有点**\
+**<u>交换主副手(默认F键)</u>在全局和每个物品的活动渐变之间切换**
 
-* **Palette**: Specifies the block pattern for the gradient.
-* **Radius** (Default: 8): Sets the radius of the brush.
-* **Interpolation** (Default: LINEAR): Determines the type of interpolation used in the gradient transition.
-* **Strength** (Default: 0.5): Adjusts the strength of interpolation, with a normal range from 0 to 1.
-* **-a**: When activated, allows the gradient to replace air blocks.
-* **-d**: Activates the 'distance to center' mode which applies the gradient based on distance to the middle of the stroke line instead of distance along the stroke.
-* **-v**: Deactivates WorldEditCUI integration.
-* **-n \<noise>** (Default: `White()`): Adds an underlying noise field to the gradient effect.
-* **-z \<scale>** (Default: 1): Modifies the scale of the noise.
+* **调色板**: 指定用于渐变的方块模式。
+* **半径** (默认值: 8): 设置刷子的半径。
+* **插值** (默认值: LINEAR): 确定渐变过渡中使用的插值类型。
+* **强度** (默认值: 0.5): 调整插值的强度，正常范围为0到1。
+* **-a**: 激活时，允许渐变替换空气方块。
+* **-d**: 激活“距离中心”模式，该模式根据到笔触线中间的距离应用渐变，而不是沿着笔触的距离。
+* **-v**: 禁用WorldEditCUI集成。
+* **-n \<噪声>** (默认值: `White()`): 为渐变效果添加基础噪声字段。
+* **-z \<范围>** (默认值: 1): 修改噪声的比例。
 
 </details>
 
@@ -66,15 +64,15 @@ The `gradientstroke` brush allows for gradient application along a path (stroke)
 
 <details>
 
-<summary>Palette Shift Brush</summary>
+<summary>调色板偏移笔刷</summary>
 
-**`//ezbr paletteshift <palette> [radius] [shift]`**
+**`//ezbr paletteshift <调色板> [半径] [偏移值]`**
 
-Replaces blocks matching the palette with palette blocks shifted along by the given amount.\
-For example, a shift value of 2 will replace any instances of the first palette block with the third.
+用调色板中偏移量给定的方块替换匹配的方块。\
+例如，偏移值为2将用第三个调色板方块替换第一个调色板方块的任何实例。
 
-* **Palette**: Specifies the block pattern for the gradient.
-* **Radius** (Default: 8): Sets the radius of the brush.
-* **Shift** (Default: 1): The amount by which to shift blocks within palette
+* **调色板**: 指定用于渐变的方块模式。
+* **半径** (默认值: 8): 设置刷子的半径。
+* **偏移值** (默认值: 1): 在调色板中偏移方块的数量。
 
 </details>

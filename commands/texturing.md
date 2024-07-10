@@ -1,7 +1,7 @@
-# Texturing
+# 纹理处理
 
-All sub-commands are under `//eztexture`  (`//ezt`) \
-e.g `//eztexture ambient`
+所有子命令都在 `//eztexture` (`//ezt`) 下 \
+例如 `//eztexture ambient`
 
 ## `//eztexture ...`
 
@@ -9,17 +9,17 @@ e.g `//eztexture ambient`
 
 <details>
 
-<summary>Ambient Texture</summary>
+<summary>环境纹理</summary>
 
 **`//ezt ambient <mask> <palette> [radius] [brightness] [contrast]`**
 
-Textures by approximating the ambience of blocks in the region.
+通过近似区域内方块的环境来处理纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Radius** (Default: 3): The radius within which the command assesses ambient differences. A larger radius considers a broader area for each calculation, leading to smoother transitions.
-* **Brightness** (Default: 0.0): Adjusts the bias towards the start or end of the palette. Higher values strengthen the start of the palette, while lower values emphasize the end.
-* **Contrast** (Default: 0.0): Amplifies or reduces the difference between the smoothed ambient field and local variations, enhancing or softening the texture's impact.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Radius** (默认值: 3): 命令评估环境差异的半径。较大的半径会考虑每次计算的更大区域，导致过渡更平滑。
+* **Brightness** (默认值: 0.0): 调整向调色板开始或结束的偏差。较高的值会增强调色板的开始部分，而较低的值会强调结束部分。
+* **Contrast** (默认值: 0.0): 放大或减少平滑环境场和局部变化之间的差异，增强或柔化纹理的效果。
 
 </details>
 
@@ -27,16 +27,16 @@ Textures by approximating the ambience of blocks in the region.
 
 <details>
 
-<summary>Axis Gradient Texture</summary>
+<summary>轴向渐变纹理</summary>
 
 **`//ezt axisgradient <mask> <palette> [axis] [-r]`**
 
-Textures a region using a gradient aligned to  a single axis.
+使用与单个轴对齐的渐变处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Axis** (Default: "y"): Determines the axis along which the gradient is applied ('x', 'y', or 'z'), guiding the direction of the gradient flow.
-* **-r**: Activates relative gradient mode, stretching the palette across whole columns.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Axis** (默认值: "y"): 确定应用渐变的轴（'x'、'y' 或 'z'），指导渐变的方向。
+* **-r**: 启用相对渐变模式，在整个列中拉伸调色板。
 
 </details>
 
@@ -44,15 +44,15 @@ Textures a region using a gradient aligned to  a single axis.
 
 <details>
 
-<summary>Blend Texture</summary>
+<summary>混合纹理</summary>
 
 **`//ezt blend <palette> [radius] [-v]`**
 
-Blends palette blocks within a region.
+在区域内混合调色板方块。
 
-* **Palette**: Specifies the palette to use for blending.
-* **Radius** (Default: "0.5"): Determines the radius of blending, affecting how broadly the blend effect is applied around each block.
-* **-v**: Activates full blend mode, allowing for the blending of non-surface blocks.
+* **Palette**: 指定使用的调色板。
+* **Radius** (默认值: "0.5"): 确定混合的半径，影响在每个方块周围应用混合效果的范围。
+* **-v**: 启用完全混合模式，允许混合非表面方块。
 
 </details>
 
@@ -60,16 +60,16 @@ Blends palette blocks within a region.
 
 <details>
 
-<summary>Blocklight Texture</summary>
+<summary>方块光纹理</summary>
 
 **`//ezt blocklight <mask> <palette> [-v] [-s]`**
 
-Textures a region based on in-game block light levels, excluding skylight.
+基于游戏内方块光照水平（不包括天光）处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **-v**: When activated, only considers the light level directly above the block.
-* **-s**: When activated, will consider skylight levels.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **-v**: 启用后，仅考虑方块上方的光照水平。
+* **-s**: 启用后，将考虑天光水平。
 
 </details>
 
@@ -77,19 +77,19 @@ Textures a region based on in-game block light levels, excluding skylight.
 
 <details>
 
-<summary>Cells Texture</summary>
+<summary>细胞纹理</summary>
 
 **`//ezt cells <mask> <palette> <amount> [brightness] [contrast] [-s] [-r]`**
 
-Textures a region with a cell-like pattern.
+使用细胞样图案处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Amount**: Determines the amount of the cells within the texture.
-* **Brightness** (Default: 0.0): Adjusts the bias towards the start or end of the palette. Higher value strengthens the start of the palette, lower strengthens the end.
-* **Contrast** (Default: 0.0): Modifies the contrast between cells, enhancing the definition and separation of the pattern.
-* **-s** (Default: -1): Optional seed for generating the cell pattern.
-* **-r** (Default: 5): Sets the repulsion factor for seed points in the Voronoi diagram, influencing the shape and distribution of cells.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Amount**: 确定纹理中细胞的数量。
+* **Brightness** (默认值: 0.0): 调整向调色板开始或结束的偏差。较高的值会增强调色板的开始部分，而较低的值会增强结束部分。
+* **Contrast** (默认值: 0.0): 修改细胞之间的对比度，增强图案的定义和分离。
+* **-s** (默认值: -1): 生成细胞图案的可选种子。
+* **-r** (默认值: 5): 设置 Voronoi 图中的种子点排斥因子，影响细胞的形状和分布。
 
 </details>
 
@@ -97,17 +97,17 @@ Textures a region with a cell-like pattern.
 
 <details>
 
-<summary>Curvature Texture</summary>
+<summary>曲率纹理</summary>
 
 **`//ezt curvature <mask> <palette> [radius] [brightness] [contrast]`**
 
-Textures a region by approximating curvature.
+通过近似曲率处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Radius** (Default: 3): Specifies the radius within which curvature is calculated, influencing the subtlety or prominence of the effect.
-* **Brightness** (Default: 0.0): Adjusts the bias towards the start or end of the palette. Higher values strengthen the start of the palette, while lower values emphasize the end.
-* **Contrast** (Default: 0.0): Modifies the contrast between areas of different curvature, enhancing the definition and separation of the pattern.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Radius** (默认值: 3): 指定计算曲率的半径，影响效果的细微程度或显著程度。
+* **Brightness** (默认值: 0.0): 调整向调色板开始或结束的偏差。较高的值会增强调色板的开始部分，而较低的值会强调结束部分。
+* **Contrast** (默认值: 0.0): 修改不同曲率区域之间的对比度，增强图案的定义和分离。
 
 </details>
 
@@ -115,22 +115,22 @@ Textures a region by approximating curvature.
 
 <details>
 
-<summary>Flow Texture</summary>
+<summary>流动纹理</summary>
 
 **`//ezt flow <mask> <palette> [exposure] [iterations] [velocity] [paletteScalar] [noise] [-m] [-g] [-f]`**
 
-Generates a flowfield effect across all surfaces within the selection.
+在选择区域的所有表面上生成流场效果。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Exposure** (Default: 0.6): Controls the overall density of the flow lines, affecting how much of the palette is used.
-* **Iterations per Line** (Default: 32): The number of steps taken to draw each line, with more iterations producing longer lines.
-* **Point Velocity** (Default: 0.5): The speed at which points move across the surface.
-* **Palette Index Scalar** (Default: 1.0): Scales the value used to select a palette block.
-* **Noise** (Default: \[Type:Perlin]): The type of noise used to generate the flowfield.
-* **-m**: Point momentum weighting, blending previous movement directions.
-* **-g**: Applies gravity to points, pulling them in the specified direction.
-* **-f**: Fills gaps with the lowest palette block.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Exposure** (默认值: 0.6): 控制流线的总体密度，影响使用调色板的程度。
+* **Iterations per Line** (默认值: 32): 绘制每条线的步骤数，更多的迭代会生成更长的线条。
+* **Point Velocity** (默认值: 0.5): 点在表面上移动的速度。
+* **Palette Index Scalar** (默认值: 1.0): 缩放用于选择调色板块的值。
+* **Noise** (默认值: [类型:Perlin]): 用于生成流场的噪声类型。
+* **-m**: 点动量加权，混合之前的移动方向。
+* **-g**: 应用重力到点上，将它们拉向指定方向。
+* **-f**: 用调色板中最低的方块填补空隙。
 
 </details>
 
@@ -138,17 +138,17 @@ Generates a flowfield effect across all surfaces within the selection.
 
 <details>
 
-<summary>Noise Texture</summary>
+<summary>噪声纹理</summary>
 
 **`//ezt noise <mask> <palette> <noise> [-z] [-s]`**
 
-Textures a region using a given noise.
+使用给定的噪声处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Noise** (Default: `Perlin(Freq:0.05)`): Sets the noise to be used.
-* **-z** (Default: 1): Adjusts the scale of the noise.
-* **-s** (Default: -1): Optional seed value for generating the noise pattern.
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Noise** (默认值: `Perlin(Freq:0.05)`): 设置要使用的噪声。
+* **-z** (默认值: 1): 调整噪声的比例。
+* **-s** (默认值: -1): 生成噪声图案的可选种子值。
 
 </details>
 
@@ -156,21 +156,21 @@ Textures a region using a given noise.
 
 <details>
 
-<summary>Pointlight Texture</summary>
+<summary>点光源纹理</summary>
 
-**`//ezt pointlight <mask> <palette> [falloffRange] [radius] [interval] [-l] [-o] [-r][-f]`**
+**`//ezt pointlight <mask> <palette> [falloffRange] [radius] [interval] [-l] [-o] [-r] [-f]`**
 
-Textures a region based on the orientation of surfaces relative to a light source.
+根据表面相对于光源的方向处理区域的纹理。
 
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Falloff Range** (Default: 0): Sets the falloff range, which is the brightness of the light point. If set to 0, the distance between the player and the region's centre is used.
-* **Radius** (Default: 1): Specifies the normal approximation radius, affecting the softness of the light's edge.
-* **Interval** (Default: "0,90"): Defines the surface orientation interval in degrees, where 0 is facing directly towards the light, and 180 is facing away. Surfaces within this interval are textured, and any below or above will be textured with the first or last palette block.
-* **-f**: Disables light falloff, applying uniform light intensity across the entire region, regardless of distance from the light source.
-* **-l**: Changes the light source position to the given coordinates, otherwise uses the player's position.
-* **-o** (Default: 0.0): Determines the strength of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
-* **-r** (Default: 1): Determines the smoothing radius for occlusion (shadows).
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Falloff Range** (默认值: 0): 设置衰减范围，即光点的亮度。如果设置为 0，则使用玩家与区域中心的距离。
+* **Radius** (默认值: 1): 指定法线近似半径，影响光的边缘的柔和度。
+* **Interval** (默认值: "0,90"): 定义表面方向区间，0 表示直接面向光源，180 表示背向光源。区间内的表面将被纹理化，超出区间的将使用调色板的第一个或最后一个方块。
+* **-f**: 禁用光衰减，在整个区域内应用均匀的光强度，无论距离光源多远。
+* **-l**: 将光源位置更改为给定坐标，否则使用玩家的位置。
+* **-o** (默认值: 0.0): 确定遮蔽强度。较高的值会导致“更暗”的阴影。预期范围为 0-1。
+* **-r** (默认值: 1): 确定遮蔽（阴影）的平滑半径。
 
 </details>
 
@@ -178,14 +178,14 @@ Textures a region based on the orientation of surfaces relative to a light sourc
 
 <details>
 
-<summary>Shift Texture</summary>
+<summary>移位纹理</summary>
 
 **`//ezt shift <palette> [shift]`**
 
-Modifies the texturing of a region by shifting the palette by a set amount.
+通过设置的量移位调色板来修改区域的纹理。
 
-* **Palette**: Specifies the palette to use.
-* **Shift** (Default: 1): Determines how many blocks within the palette to shift by.
+* **Palette**: 指定使用的调色板。
+* **Shift** (默认值: 1): 确定调色板中方块的移位数量。
 
 </details>
 
@@ -193,77 +193,8 @@ Modifies the texturing of a region by shifting the palette by a set amount.
 
 <details>
 
-<summary>Sunlight Texture</summary>
+<summary>阳光纹理</summary>
 
 **`//ezt sunlight <mask> <palette> [radius] [interval] [-l] [-o] [-r]`**
 
-Textures a region using a global light source direction to control the application of the palette.
-
-* **Mask**: Blocks to replace.
-* **Palette**: Specifies the palette to use.
-* **Radius** (Default: 1): Defines the normal approximation radius, affecting the calculation of how surfaces are oriented relative to the sunlight.
-* **Interval** (Default: "0,180"): Defines the surface orientation interval in degrees, where 0 is facing directly towards the light, and 180 is facing away. Surfaces within this interval are textured, and any below or above will be textured with the first or last palette block.
-* **-l** (Default: down): Global direction into which the light shines.
-* **-o** (Default: 0.0): Determines the strength of occlusion. A higher value results in "darker" shadows. Expected range of 0-1.
-* **-r** (Default: 1): Determines the smoothing radius for occlusion (shadows).
-
-</details>
-
-### `advanced`
-
-<details>
-
-<summary>Advanced Texturing</summary>
-
-**`//ezt advanced <mask> <palette> <texture>`**
-
-More powerful interface of using eztexture. It has access to all other eztexture commands and can also mix/combine them.
-Meaning you can for example do ambient and sunlight texturing simultaneously.
-
-- **Mask**: Blocks to replace.
-- **Palette**: Specifies the palette to use.
-- **Texture**: A Texturing specification.
-
-#### How to define a `<texture>`?
-
-A `<texture>` follows the following common way of specifying complex objects:
-```<type>(<parameter1>:<value1>,<parameter2>:<value2>)```
-Each Texture type has its own set of parameters. You can set as many parameters as you like. If a parameter is not set, a default value will be used instead. Each parameter can have different inputs it accepts. Some parameters accept numbers, some accept a 3D vector, some accept a Noise argument, and some even accept Texture objects themselves.
-A `<texture>` can be any of the existing texture modes. Some simples examples:
-- `Ambient`
-- `Ambient()`
-- `Ambient(Radius:2)`
-- `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
-- `Flow(Noise:@@ridged(Freq:0.12))`
-
-To clarify: The following two commands will do the same.
-- `//eztexture ambient #existing ##grayscale 2 0.2 0.3`
-- `//eztexture advanced #existing ##grayscale Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
-
-#### Combining textures
-
-The following textures have `Texture1`(`T1`)/`Texture2`(`T2`) parameters accepting `<texture>` arguments themselves allowing you to combine texture modes:
-- `Add(T1:...,T2:...)`
-- `Subtract(T1:...,T2:...)`
-- `Multiply(T1:...,T2:...)`
-- `Divide(T1:...,T2:...)`
-- `WeightedAverage(T1:...,T2:...)`
-- `Darken(T1:...,T2:...)`
-- `Lighten(T1:...,T2:...)`
-- `Difference(T1:...,T2:...)`
-- `Screen(T1:...,T2:...)`
-
-The following textures have `Texture`(`T`) parameters accepting `<texture>` arguments themselves allowing you adjust/post-process textures:
-- `Adjust(T:...,Brightness:...,Contrast:...)`
-- `Invert(T:...)`
-- `Blend(T:...,Radius:...)`
-
-Examples:
-- `WeightedAverage(T1:Sun(),T2:Ambient())`
-- `Blend(T:Flow(Noise:@@ridged(Freq:0.12)),Radius:0.7)`
-- `Darken(T1:Noise(Noise:@@smoothcells(freq:0.5)),T2:Flow)`
-- `Adjust(T:Pointlight,Contrast:0.5)`
-
-Please note that the `Texture`/`Texture1`/`Texture2` (`T`/`T1`/`T2`) are not optional. You must set them to use these combining/adjusting textures. (If you do not set them you'll receive an error saying `cannot be null`).
-
-</details>
+使用全局光源方向控制调色板

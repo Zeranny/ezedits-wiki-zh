@@ -1,30 +1,28 @@
 ---
-description: Advanced selection tool
+description: 高级选择工具
 ---
 
-# Superwand
+# 超级选区工具
 
-The Super Wand tool offers four distinct modes for point selection and manipulation, providing an expanded way to work with region selections.
+超级选区工具提供了四种不同的模式用于方块选择和操作，扩展了区域选择的工作方式。
 
+**强烈推荐使用WorldEditCUI mod**：[**https://modrinth.com/mod/worldedit-cui**](https://modrinth.com/mod/worldedit-cui)
 
+### 模式
 
-**WorldEditCUI is strongly recommended:** [**https://modrinth.com/mod/worldedit-cui**](https://modrinth.com/mod/worldedit-cui)
+1. **TRACE模式**：选择你正在瞄准的方块为第二个点。
+2. **POSITION模式**：选择当前玩家下半身位置处的方块为第二个点。
+3. **RELATIVE模式**：选择一个相对于最后放置的点和玩家的目标方向的点。
+4. **GRAB模式**：启用复制并移动选区。
 
-### Modes
+### 控制
 
-1. **TRACE Mode**: Selects the block you are targeting.
-2. **POSITION Mode**: Selects the block at your current player position.
-3. **RELATIVE Mode**: Selects a point relative to the last point placed and the player's aim direction.
-4. **GRAB Mode**: Enables grabbing and moving a point or the entire selection.
-
-### Controls
-
-* **Right Click**:
-  * In point selection modes, selects a new point or replaces the most recent point if the selection is full.
-  * In GRAB mode, picks up a point or the entire selection, moving it with the player's movements.
-* **Left Click**:
-  * In point selection modes, removes the last set point.
-  * In GRAB mode, drops the point or selection.
-* **Sneak + Left Click**: Cycles through the tool modes.
-* **Swap Hand (Default F Key)**: Reverses the order of points in the selection.
-* **Sneak + Swap Hand (Default F Key)**: Shifts all convex selection points along by one position in the list of points.
+* **右键点击**：
+  * 在常规选择模式下，选择一个新点或如果选择已满则替换最近的点。
+  * 在GRAB模式下，复制整个选择区域，并随着玩家的移动而移动它。
+* **左键点击**：
+  * 在常规选择模式下，移除最后设置的点。
+  * 在GRAB模式下，在你的位置放下选区。
+* **潜行+左键点击**：循环切换工具模式。
+* **交换主副手（默认F键）**：反转选择中的点顺序。
+* **潜行+交换主副手（默认F键）**：在点列表中将所有convex选区点按一个位置进行移位。

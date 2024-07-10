@@ -1,14 +1,14 @@
-# Patterns
+# 图案
 
 ### `#aim`
 
 <details>
 
-<summary>#aim Pattern</summary>
+<summary>#aim 图案</summary>
 
-Takes the block the player is aiming at as the pattern.
+将玩家瞄准的方块作为图案。
 
-<img src="../.gitbook/assets/aimPattern.gif" alt="" data-size="original">
+<img src="../../.gitbook/assets/aimPattern.gif" alt="" data-size="original">
 
 </details>
 
@@ -16,13 +16,13 @@ Takes the block the player is aiming at as the pattern.
 
 <details>
 
-<summary>#eznoise Pattern</summary>
+<summary>#eznoise 图案</summary>
 
 **`#eznoisepattern[palette][noisePreset][<scale>][<seed>]`**\
-**Alias: `#eznp`**
+**别名: `#eznp`**
 
-Uses a noise preset values to return palette blocks.\
-**Which also has the following in-built presets:**
+使用噪声预设值返回调色板方块。\
+**还包括以下内置预设:**
 
 * **`#ridged[palette][<scale>][<seed>]`**
 * **`#smoothcells[palette][<scale>][<seed>]`**&#x20;
@@ -34,12 +34,12 @@ Uses a noise preset values to return palette blocks.\
 
 <details>
 
-<summary>#vectorgradient Pattern</summary>
+<summary>#vectorgradient 图案</summary>
 
 **`#vectorgradientpattern[palette][vector][distance][<noisePreset>][<noiseScale>][<noiseSeed>]`**\
-**Alias: `#vgradientp`**
+**别名: `#vgradientp`**
 
-Sets palette blocks along a vector with a given distance length with the block chosen based on distance plus a blending factor. Can also use noise presets.
+沿给定距离长度的向量设置调色板方块，方块的选择基于距离和混合因子。也可以使用噪声预设。
 
 </details>
 
@@ -47,32 +47,30 @@ Sets palette blocks along a vector with a given distance length with the block c
 
 <details>
 
-<summary>#selection Pattern</summary>
+<summary>#selection 图案</summary>
 
 **`#selection[selection][<offset>]`**
 
-Shorthand: **`#sel[selection][<offset>]`**
+简写: **`#sel[selection][<offset>]`**
 
-Sets blocks using  the blocks currently in world at the location of the saved selection.\
-Acts as if the selection were tiled/stacked.
+使用保存选择位置当前世界中的方块设置方块。\
+效果如同选择区域被平铺/堆叠。
 
-Optional `<offset>` variable to offset the pattern by a given vector.
+可选的 `<offset>` 变量可用于按给定向量偏移图案。
 
 </details>
-
-
 
 ### `#palette`
 
 <details>
 
-<summary>#palette Pattern</summary>
+<summary>#palette 图案</summary>
 
 **`#palette[palette]`**
 
-Takes the given palette and returns a list of palette blocks.
-Can be used as a random block pattern.
+接受给定的调色板并返回调色板方块列表。\
+可以用作随机方块图案。
 
-e.g. `//set #palette[##ice]` is the same as `//set [blue_ice,packed_ice,ice]`
+例如 `//set #palette[##ice]` 与 `//set [blue_ice,packed_ice,ice]` 相同。
 
 </details>
