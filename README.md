@@ -2,7 +2,7 @@
 
 <div align="left">
 
-<figure><img src="../.gitbook/assets/logofinal5.png" alt="" width="188"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/logofinal5.png" alt="" width="188"><figcaption></figcaption></figure>
 
 </div>
 
@@ -16,4 +16,4 @@ ezEdits 是一个 WorldEdit/FastAsyncWorldEdit (WE/FAWE) 扩展插件，它增�
 * Discord: [https://discord.gg/NfT3vyeKu5](https://discord.gg/NfT3vyeKu5)
 * Twitter: [https://twitter.com/ezEditsMC](https://twitter.com/ezEditsMC)
 * Instagram: [https://www.instagram.com/ezeditsmc/](https://www.instagram.com/ezeditsmc/)
-* 帮助我们更新文档: [https://github.com/Zeranny/ezedits-wiki](https://github.com/Zeranny/ezedits-wiki)
+* 帮助我们更新文档: [https://github.com/Zeranny/ezedits-wiki-zh](https://github.com/Zeranny/ezedits-wiki-zh)

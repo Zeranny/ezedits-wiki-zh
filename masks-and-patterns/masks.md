@@ -1,4 +1,4 @@
-# Masks
+# 蒙板 Masks
 
 ### `#near`
 
@@ -13,11 +13,11 @@
 不修改与内层`mask`匹配的方块。\
 也可以设置为排除比最小距离更近的方块。
 
-<img src="../../.gitbook/assets/mask_near_mask.gif" alt=""/> **`[mask]`**
+<img src="../.gitbook/assets/mask_near_mask.gif" alt=""/> **`[mask]`**
 
-<img src="../../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
+<img src="../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
 
-<img src="../../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
+<img src="../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
 
 </details>
 
@@ -29,7 +29,7 @@
 
 将玩家瞄准的方块作为蒙板。
 
-<img src="../../.gitbook/assets/aimMask.gif" alt="" data-size="original">
+<img src="../.gitbook/assets/aimMask.gif" alt="" data-size="original">
 
 </details>
 

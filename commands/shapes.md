@@ -1,4 +1,4 @@
-# 几何工具
+# 几何工具 Shapes
 
 所有子命令都在 `//ezshapes` (`//ezsh`) 下 \
 例如 `//ezshapes polydome`

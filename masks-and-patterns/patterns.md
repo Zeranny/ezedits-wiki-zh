@@ -8,7 +8,7 @@
 
 将玩家瞄准的方块作为图案。
 
-<img src="../../.gitbook/assets/aimPattern.gif" alt="" data-size="original">
+<img src="../.gitbook/assets/aimPattern.gif" alt="" data-size="original">
 
 </details>
 

@@ -1,4 +1,4 @@
-# 区域操作
+# 区域操作 Region
 
 一组在选定区域内操作的杂项命令。
 
@@ -18,11 +18,11 @@
 * **Min Length** (默认值: 2): 指定藤蔓的最小长度。
 * **Max Length** (默认值: 5): 定义藤蔓的最大长度。
 
-<img src="../../.gitbook/assets/ezvines_mask.gif" alt="" data-size="original"> **`<mask>`**
+<img src="../.gitbook/assets/ezvines_mask.gif" alt="" data-size="original"> **`<mask>`**
 
-<img src="../../.gitbook/assets/ezvines_percentage.gif" alt="" data-size="original"> **`[percentage]`**
+<img src="../.gitbook/assets/ezvines_percentage.gif" alt="" data-size="original"> **`[percentage]`**
 
-<img src="../../.gitbook/assets/ezvines_length.gif" alt="" data-size="original"> **`[min_length] [max_length]`**
+<img src="../.gitbook/assets/ezvines_length.gif" alt="" data-size="original"> **`[min_length] [max_length]`**
 
 </details>
 
@@ -41,13 +41,13 @@
 * **Smooth Radii** (默认值: 1): 设置苔藓放置的平滑半径。可以是一个半径或三个用逗号分隔的半径，顺序为东/西、上/下、北/南。
 * **Smooth Iterations** (默认值: 5): 定义应用的平滑迭代次数。
 
-<img src="../../.gitbook/assets/ezmoss_amount.gif" alt="" data-size="original"> **`[amount]`**
+<img src="../.gitbook/assets/ezmoss_amount.gif" alt="" data-size="original"> **`[amount]`**
 
-<img src="../../.gitbook/assets/ezmoss_radius.gif" alt="" data-size="original"> **`[smooth_radii]`**
+<img src="../.gitbook/assets/ezmoss_radius.gif" alt="" data-size="original"> **`[smooth_radii]`**
 
-<img src="../../.gitbook/assets/ezmoss_radii.gif" alt="" data-size="original"> **`[smooth_radii]`**
+<img src="../.gitbook/assets/ezmoss_radii.gif" alt="" data-size="original"> **`[smooth_radii]`**
 
-<img src="../../.gitbook/assets/ezmoss_iterations.gif" alt="" data-size="original"> **`[smooth_iterations]`**
+<img src="../.gitbook/assets/ezmoss_iterations.gif" alt="" data-size="original"> **`[smooth_iterations]`**
 
 </details>
 
