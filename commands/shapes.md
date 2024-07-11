@@ -13,7 +13,7 @@
 
 **`//ezsh cone <pattern> <radii> <height> [rotation] [-dos]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Radii**: 定义圆锥体的半径。第一个值用于南北方向，第二个用于东西方向。如果旋转圆锥体，这些方向可能会改变。
 * **Height**: 设置圆锥体的高度。
 * **Rotation** (默认值: 0): 确定围绕y轴的旋转角度，以度为单位。如果使用 `-o` 参数，可以与玩家的瞄准方向对齐。
@@ -31,7 +31,7 @@
 
 **`//ezsh polydome <pattern> <sides> <radius> <height> [-vs]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Sides**: 定义穹顶的边数。
 * **Radius**: 设置穹顶的半径。
 * **Height** (默认值: 1): 确定圆顶的高度。
@@ -48,7 +48,7 @@
 
 **`//ezsh polygon <pattern> <sides> <radius> <height> [direction] [-s]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Sides**: 定义多边形的边数。
 * **Radius**: 设置多边形的半径。
 * **Height** (默认值: 1): 确定多边形的高度。
@@ -65,7 +65,7 @@
 
 **`//ezsh square <pattern> <radius> <height> [-fws]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Radius**: 设置正方形的半径。
 * **Height** (默认值: 1): 确定正方形的高度。
 * **-f**: 激活时，仅生成正方形的面。
@@ -82,7 +82,7 @@
 
 **`//ezsh tetrahedron <pattern> <radius> [rotation] [-os]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Radius**: 设置四面体的大小。
 * **Rotation** (默认值: 0): 确定围绕y轴的旋转角度，以度为单位。如果使用 `-o` 开关，可以与玩家的瞄准方向对齐。
 * **-o**: 使用时，考虑玩家的瞄准方向以进行四面体的旋转。
@@ -98,7 +98,7 @@
 
 **`//ezsh torus <pattern> <major_radius> <minor_radius> <cross_section> [-os]`**
 
-* **Pattern**: 指定方块模式。
+* **Pattern**: 指定方块。
 * **Major Radius**: 设置环形体的主半径。
 * **Minor Radius**: 设置环形体的次半径。
 * **Cross Section**: 确定环形体的横截面形状：
