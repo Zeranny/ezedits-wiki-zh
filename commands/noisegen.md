@@ -1,4 +1,4 @@
-# 噪声生成
+# 噪声生成 NoiseGen
 
 所有子命令都在`//eznoisegen` (`//noisegen`, `//ng`) 下 \
 例如 `//ng heightmap`

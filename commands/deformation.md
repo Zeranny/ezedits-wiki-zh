@@ -1,4 +1,4 @@
-# 变形
+# 变形 Deformation
 
 所有子命令都在`//ezdeform` (`//ezd`) 下 \
 例如 `//ezdeform hexagonalize`

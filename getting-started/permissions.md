@@ -15,12 +15,12 @@ description: ezEdits权限列表
 <tbody>
 <tr>
 <td>ezedits.general.wiki</td>
-<td><strong>/ezedits wiki</strong><br>在聊天中打印此wiki的链接</td>
+<td><strong>/ezedits wiki</strong><br>在聊天中输出此wiki的链接</td>
 <td>Basic</td>
 </tr>
 <tr>
 <td>ezedits.general.info</td>
-<td><strong>/ezedits info</strong><br>在聊天中打印基本插件信息</td>
+<td><strong>/ezedits info</strong><br>在聊天中输出基本插件信息</td>
 <td>Basic</td>
 </tr>
 <tr>
@@ -180,7 +180,7 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.noise.print</td>
-<td><strong>//eznoise print</strong><br>打印保存的噪声预设参数</td>
+<td><strong>//eznoise print</strong><br>输出保存的噪声预设参数</td>
 <td>Intermediate</td>
 </tr>
 <tr>
@@ -190,7 +190,7 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.palettes.decode</td>
-<td><strong>//ezpalette decode</strong><br>打印给定编码调色板字符串中的方块。</td>
+<td><strong>//ezpalette decode</strong><br>输出给定编码调色板字符串中的方块。</td>
 <td>Intermediate</td>
 </tr>
 <tr>
@@ -220,7 +220,7 @@ description: ezEdits权限列表
 </tr>
 <tr>
 <td>ezedits.palettes.print</td>
-<td><strong>//ezpalette print</strong><br>打印保存的调色板中的方块</td>
+<td><strong>//ezpalette print</strong><br>输出保存的调色板中的方块</td>
 <td>Intermediate</td>
 </tr>
 <tr>

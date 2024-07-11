@@ -1,4 +1,4 @@
-# 纹理处理
+# 纹理处理 Texturing
 
 所有子命令都在 `//eztexture` (`//ezt`) 下 \
 例如 `//eztexture ambient`
@@ -197,4 +197,73 @@
 
 **`//ezt sunlight <mask> <palette> [radius] [interval] [-l] [-o] [-r]`**
 
-使用全局光源方向控制调色板
+使用全局光源方向控制调色板的应用，对区域进行纹理化。
+
+* **Mask**: 要替换的方块。
+* **Palette**: 指定使用的调色板。
+* **Radius** (默认值: 1): 定义法线近似半径，影响计算表面相对于阳光的方向。
+* **Interval** (默认值: "0,180"): 定义表面方向间隔，以度为单位，其中0是直接朝向光，180是背对光。此间隔内的表面将被纹理化，低于或高于此间隔的任何表面将被纹理化为第一个或最后一个调色板方块。
+* **-l** (默认值: down): 全局光照方向。
+* **-o** (默认值: 0.0): 确定遮蔽的强度。较高的值会产生“更暗”的阴影。预期范围为0-1。
+* **-r** (默认值: 1): 确定遮蔽（阴影）的平滑半径。
+
+</details>
+
+### `advanced`
+
+<details>
+
+<summary>高级纹理</summary>
+
+**`//ezt advanced <mask> <palette> <texture>`**
+
+更强大的 eztexture 接口。它可以访问所有其他 eztexture 命令并可以混合/组合它们。
+这意味着你可以同时进行环境和阳光纹理处理。
+
+- **Mask**: 要替换的方块(蒙板)。
+- **Palette**: 指定使用的调色板。
+- **Texture**: 纹理规范。
+
+#### 如何定义 `<texture>`？
+
+一个 `<texture>` 遵循以下常见的复杂对象指定方式：
+```<type>(<parameter1>:<value1>,<parameter2>:<value2>)```
+每种纹理类型都有自己的一组参数。你可以设置任意多的参数。如果没有设置参数，将使用默认值。每个参数可以接受不同的输入。有些参数接受数字，有些接受3D向量，有些接受噪声参数，甚至有些接受纹理对象本身。
+一个 `<texture>` 可以是任何现有的纹理模式。一些简单的例子：
+- `Ambient`
+- `Ambient()`
+- `Ambient(Radius:2)`
+- `Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+- `Flow(Noise:@@ridged(Freq:0.12))`
+
+解释一下：以下两个命令将执行相同的操作。
+- `//eztexture ambient #existing ##grayscale 2 0.2 0.3`
+- `//eztexture advanced #existing ##grayscale Ambient(Radius:2,Brightness:0.2,Contrast:0.3)`
+
+#### 组合纹理
+
+以下纹理具有 `Texture1`(`T1`)/`Texture2`(`T2`) 参数，接受 `<texture>` 参数本身，允许你组合纹理模式：
+- `Add(T1:...,T2:...)`
+- `Subtract(T1:...,T2:...)`
+- `Multiply(T1:...,T2:...)`
+- `Divide(T1:...,T2:...)`
+- `WeightedAverage(T1:...,T2:...)`
+- `Darken(T1:...,T2:...)`
+- `Lighten(T1:...,T2:...)`
+- `Difference(T1:...,T2:...)`
+- `Screen(T1:...,T2:...)`
+
+以下纹理具有 `Texture`(`T`) 参数，接受 `<texture>` 参数本身，允许你调整/后处理纹理：
+- `Adjust(T:...,Brightness:...,Contrast:...)`
+- `Invert(T:...)`
+- `Blend(T:...,Radius:...)`
+
+示例：
+- `WeightedAverage(T1:Sun(),T2:Ambient())`
+- `Blend(T:Flow(Noise:@@ridged(Freq:0.12)),Radius:0.7)`
+- `Darken(T1:Noise(Noise:@@smoothcells(freq:0.5)),T2:Flow)`
+- `Adjust(T:Pointlight,Contrast:0.5)`
+
+请注意，`Texture`/`Texture1`/`Texture2` (`T`/`T1`/`T2`) 不是可选项。你必须设置它们以使用这些组合/调整纹理。（如果不设置，你将收到错误消息，提示 `cannot be null`）。
+
+</details>

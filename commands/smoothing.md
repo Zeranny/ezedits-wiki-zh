@@ -1,4 +1,4 @@
-# Smoothing
+# 平滑 Smoothing
 
 ### `//ezsmooth`
 
