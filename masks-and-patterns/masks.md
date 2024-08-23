@@ -145,3 +145,17 @@
 等效于 **`#palette[palette][False]`**
 
 </details>
+
+### `#current`
+
+<details>
+
+<summary>当前蒙板</summary>
+
+简写: **`#c`**
+
+这是一个表示当前全局蒙板（gmask）的蒙板。
+
+例如，运行 `//gmask !#current` 将反转你当前的全局蒙板。
+
+</details>
