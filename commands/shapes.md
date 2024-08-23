@@ -11,13 +11,14 @@
 
 <summary>圆锥体</summary>
 
-**`//ezsh cone <pattern> <radii> <height> [rotation] [-dos]`**
+**`//ezsh cone <pattern> <radii> <height> [rotation] [-dhos]`**
 
 * **Pattern**: 指定方块。
 * **Radii**: 定义圆锥体的半径。第一个值用于南北方向，第二个用于东西方向。如果旋转圆锥体，这些方向可能会改变。
 * **Height**: 设置圆锥体的高度。
 * **Rotation** (默认值: 0): 确定围绕y轴的旋转角度，以度为单位。如果使用 `-o` 参数，可以与玩家的瞄准方向对齐。
 * **-d**: 激活时，生成尖端朝下的圆锥体。
+* **-h**: 生成一个空心几何。
 * **-o**: 使用时，考虑玩家的瞄准方向以进行圆锥体的旋转。
 * **-s**: 使用时，玩家的选择将大致覆盖形状。
 
@@ -80,11 +81,12 @@
 
 <summary>四面体</summary>
 
-**`//ezsh tetrahedron <pattern> <radius> [rotation] [-os]`**
+**`//ezsh tetrahedron <pattern> <radius> [rotation] [-hos]`**
 
 * **Pattern**: 指定方块。
 * **Radius**: 设置四面体的大小。
-* **Rotation** (默认值: 0): 确定围绕y轴的旋转角度，以度为单位。如果使用 `-o` 开关，可以与玩家的瞄准方向对齐。
+* **Rotation** (默认值: 0): 决定绕y轴的旋转角度（以度为单位）。如果使用 `-o` 开关，此角度可以与玩家的瞄准方向对齐。
+* **-h**: 生成一个空心几何。
 * **-o**: 使用时，考虑玩家的瞄准方向以进行四面体的旋转。
 * **-s**: 使用时，玩家的选择将大致覆盖形状。
 
@@ -96,7 +98,7 @@
 
 <summary>环形体</summary>
 
-**`//ezsh torus <pattern> <major_radius> <minor_radius> <cross_section> [-os]`**
+**`//ezsh torus <pattern> <major_radius> <minor_radius> <cross_section> [-hos]`**
 
 * **Pattern**: 指定方块。
 * **Major Radius**: 设置环形体的主半径。
@@ -106,6 +108,7 @@
   * `DIAMOND`
   * `ROUNDED_SQUARE`
   * `SQUARE`
+* **-h**: 生成一个空心几何。
 * **-o**: 使用时，环形体的旋转与玩家的瞄准方向对齐。
 * **-s**: 使用时，玩家的选择将大致覆盖形状。
 
