@@ -1,89 +1,21 @@
-# 蒙板 Masks
-
-### `#near`
-
-<details>
-
-<summary>#near 临近蒙板</summary>
-
-**`#near[蒙板][距离]`**\
-**`#near[蒙板][最小距离][最大距离]`**
-
-在给定的球形（欧几里得）距离内匹配所有方块。\
-不修改与内层`mask`匹配的方块。\
-也可以设置为排除比最小距离更近的方块。
-
-<img src="../.gitbook/assets/mask_near_mask.gif" alt=""/> **`[mask]`**
-
-<img src="../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
-
-<img src="../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
-
-</details>
+# 蒙版 (Masks)
 
 ### `#aim`
 
 <details>
 
-<summary>#aim 目标蒙板</summary>
+<summary>目标蒙版</summary>
 
-将玩家瞄准的方块作为蒙板。
+**`#aim` 或 `#aim[True|False]`**
+
+以玩家准星指向的方块作为蒙版。
+
+可选参数 True/False 用于切换是否开启"精确碰撞检测"：
+
+* **False** (默认)：将所有方块视为完整的 1x1x1 立方体。例如，你无法直接通过此模式选中按钮背后的方块。
+* **True**：尊重方块的实际碰撞体积 (Hitbox)。例如，你可以透过台阶的空隙选中其背后的方块。
 
 <img src="../.gitbook/assets/aimMask.gif" alt="" data-size="original">
-
-</details>
-
-### `#blocklight`
-
-<details>
-
-<summary>#blocklight 方块光照蒙板</summary>
-
-**`#blocklight[光照级别]` or `#blocklight[最小级别][最大级别]`**
-
-按给定的方块光照（由除天空光照外的光源提供的照明）匹配方块。
-可以选择设置最小和最大光照级别，匹配该范围内的任何级别。
-
-</details>
-
-### `#truelight`
-
-<details>
-
-<summary>#truelight 全光照蒙板</summary>
-
-**`#truelight[光照级别]` or `#truelight[最小级别][最大级别]`**
-
-按给定的总光照级别（包括天空光照在内的任何光源提供的照明）匹配方块。
-可以选择设置最小和最大光照级别，匹配该范围内的任何级别。
-
-</details>
-
-### `#eznoise`
-
-<details>
-
-<summary>#eznoise 噪声蒙板</summary>
-
-**`#eznoisemask[噪声预设][<范围>][<threshold>][<种子>]`**\
-**别名: `#eznm`**
-
-使用噪声预设值`0.0-1.0`来匹配超过给定噪声阈值的方块。
-
-</details>
-
-### `#vectorgradient`
-
-<details>
-
-<summary>#vectorgradient 矢量渐变蒙板</summary>
-
-**`#vectorgradientmask[矢量][距离][<噪声预设>][<噪声范围>][噪声种子]`**
-
-简写: `#vgradientm`
-
-沿向量匹配给定距离长度的方块。距离越近的方块通过蒙板检查的可能性越大。\
-兼容噪声预设。
 
 </details>
 
@@ -91,58 +23,28 @@
 
 <details>
 
-<summary>#attached 附属蒙板</summary>
+<summary>附着蒙版</summary>
 
 **`#attached[<向量,向量,向量 ...>]`**
 
-匹配至少连接一个相邻非空气方块的方块。
+匹配与至少一个相邻非空气方块相连的方块。
 
-可选择设置方向向量列表进行检查，而不是检查每个面。\
-例如 `#attached[up,down,left,north]`
+可选参数：提供一个方向向量列表进行定向检测，而非检测所有侧面。\
+例如：`#attached[up,down,left,north]`
 
-在任一种情况下，连接意味着方块“接触”相邻方块。因此，下部台阶不会通过`#attached[up]`，而状态为`[hanging=true]`的灯笼会通过。
-
-</details>
-
-### `#fullblock`
-
-<details>
-
-<summary>#fullblock 完整方块蒙板</summary>
-
-匹配填满整个立方空间的方块。
-
-例如，1-7层的雪不会通过，但8层的雪、像石头一样的方块或像玻璃一样的透明方块会通过蒙板检查。
+注意：`attached` 意味着方块在逻辑上与相邻方块"接触"。例如，处于下半部分的台阶无法通过 `#attached[up]` 检测，而带有 `[hanging=true]` 状态的灯笼则可以通过。
 
 </details>
 
-### `#palette`
+### `#blocklight`
 
 <details>
 
-<summary>#palette 调色板蒙板</summary>
+<summary>方块光照蒙版</summary>
 
-**`#palette[调色板][<strict>]`**
+**`#blocklight[光照等级]` 或 `#blocklight[最小等级][最大等级]`**
 
-匹配与调色板中的任何方块相符的方块。
-
-可选的`<strict>`值为True或False，以确定方块数据是否也必须匹配。\
-例如 `oak_stairs[facing=east]` 只有在`strict`设置为**False**时才会与`oak_stairs[facing=west]`匹配。
-
-</details>
-
-### `#fuzzypalette`
-
-<details>
-
-<summary>#fuzzypalette 模糊调色板蒙板</summary>
-
-**`#fuzzypalette[调色板]`**
-
-简写: **`#fpalette`**
-
-匹配与调色板中的任何方块相符的方块，不考虑方块数据。\
-等效于 **`#palette[palette][False]`**
+匹配指定方块光照等级的方块（指由光源方块提供的亮度，不含天空光）。可以设置一个范围来匹配区间内的等级。
 
 </details>
 
@@ -150,12 +52,137 @@
 
 <details>
 
-<summary>当前蒙板</summary>
+<summary>当前蒙版</summary>
 
-简写: **`#c`**
+缩写：**`#c`**
 
-这是一个表示当前全局蒙板（gmask）的蒙板。
+代表你当前已设置的全局蒙版 (gmask)。
 
-例如，运行 `//gmask !#current` 将反转你当前的全局蒙板。
+例如运行 `//gmask !#current` 将反转你当前的全局蒙版。
+
+</details>
+
+### `#eznoise`
+
+<details>
+
+<summary>噪声蒙版</summary>
+
+**`#eznoisemask[噪声预设][<缩放>][<阈值>][<种子>]`**\
+**别名：`#eznm`**
+
+基于噪声预设生成的 `0.0-1.0` 数值，匹配高于指定阈值的方块。
+
+</details>
+
+### `#fullblock`
+
+<details>
+
+<summary>全方块蒙版</summary>
+
+匹配填满了整个 1x1x1 立方体空间的方块。
+
+例如：1-7 层高度的雪层无法通过，但 8 层雪、石头、甚至是玻璃等透明全方块均可通过。
+
+</details>
+
+### `#fuzzypalette`
+
+<details>
+
+<summary>模糊调色板蒙版</summary>
+
+**`#fuzzypalette[调色板]`**
+
+缩写：**`#fpalette`**
+
+匹配调色板中出现的任何方块，忽略其具体的方块状态 (BlockState/数据值)。\
+等同于：**`#palette[调色板][False]`**
+
+</details>
+
+### `#infested`
+
+<details>
+
+<summary>寄生蒙版</summary>
+
+匹配被蠹虫寄生的方块（被寄生的石砖、石头等）。
+
+</details>
+
+### `#lightsource`
+
+<details>
+
+<summary>光源蒙版</summary>
+
+**`#lightsource` 或 `#lightsource[光照等级]` 或 `#lightsource[最小等级][最大等级]`**
+
+匹配发光的方块。可以指定特定的光照等级或范围。
+
+</details>
+
+### `#near`
+
+<details>
+
+<summary>临近蒙版</summary>
+
+**`#near[蒙版][距离]`**\
+&#xNAN;**`#near[蒙版][最小距离][最大距离]`**\
+\
+匹配距离指定蒙版方块在一定球形（欧几里得）距离内的方块。\
+此蒙版不会修改符合内部 `mask` 条件的原始方块。\
+你可以通过设置最小距离来排除中心区域。
+
+![](../.gitbook/assets/mask_near_mask.gif) **`[mask]`**
+
+<img src="../.gitbook/assets/mask_near_max.gif" alt="" data-size="original"> **`[distance]`**
+
+<img src="../.gitbook/assets/mask_near_min_max.gif" alt="" data-size="original"> **`[minDistance][maxDistance]`**
+
+</details>
+
+### `#palette`
+
+<details>
+
+<summary>调色板蒙版</summary>
+
+**`#palette[调色板][<精确匹配>]`**
+
+匹配调色板中包含的方块。
+
+可选参数 `<strict>` (精确匹配)：True 或 False。决定是否必须匹配方块状态 (BlockState)。\
+例如，若设为 **False**，则 `oak_stairs[facing=east]` 也能匹配 `oak_stairs[facing=west]`。
+
+</details>
+
+### `#truelight`
+
+<details>
+
+<summary>真实光照蒙版</summary>
+
+**`#truelight[光照等级]` 或 `#truelight[最小等级][最大等级]`**
+
+匹配指定总光照等级的方块（包括天空光和所有光源）。可以指定范围进行匹配。
+
+</details>
+
+### `#vectorgradient`
+
+<details>
+
+<summary>向量渐变蒙版</summary>
+
+**`#vectorgradientmask[向量][距离][<噪声预设>][<噪声缩放>][噪声种子]`**
+
+缩写：`#vgradientm`
+
+沿指定方向和距离的向量进行渐变蒙版。距离起点越近的方块，通过蒙版检测的概率越高。\
+支持配合噪声预设使用。
 
 </details>

@@ -1,33 +1,43 @@
-# 调色板说明
+<!-- langmirror:chunk 0 -->
+# 调色板详解 (Palettes Explained)
 
-ezEdits中的调色板表示可以在多个命令中使用的方块列表，其中方块的顺序将被保持。
+ezEdits 中的调色板（Palettes）代表一组方块列表，可用于多个需要保持方块顺序的命令中。
 
-调色板可以使用以下前缀进行保存和访问：
-* `#` 保存用户调色板。
-* `##` 内置预设的调色板。\
+可以使用 **`#`** 前缀来保存和访问用户自定义调色板，使用 **`##`** 前缀来访问 [内置预设调色板](default-palettes.md)。
 
-例如 `##LegacyWool` 表示内置的羊毛调色板，从白色羊毛、橙色羊毛一直到红色羊毛，最后是黑色羊毛。
+作为参考，示例如下：
 
-一些使用调色板的功能包括：
+<figure><img src="../.gitbook/assets/palette_Grayscale.png" alt=""><figcaption><p>##Grayscale</p></figcaption></figure>
 
-* `//eztexture ...` - *材质指令*
-* `#palette` - *蒙版*
-* `//ezbrush gradient ...` - *笔刷*
+使用调色板的众多功能包括：
 
+* `//eztexture ...` - [纹理化命令](../commands/texturing.md)
+* `#palette` - [调色板蒙版](../masks-and-patterns/masks.md#palette-mask)
+* `//ezbrush gradient ...` - [笔刷](../brushes-and-tools/brushes/)
 
+调色板可以由简单的方块列表构成，也可以通过几种修饰符来构建：
 
-调色板可以通过几种修饰符构建：
+<!-- langmirror:chunk 1 -->
+* **`,`** - <mark style="color:orange;">**合并**</mark>:
+  * 将一个方块或调色板添加到前一个方块或调色板的末尾。\
+    例如 `stone,dirt` 是一个包含石头和泥土的 2 方块调色板。`stone,##Grayscale` 是一个由石头和 ##Grayscale 预设调色板中的方块组成的调色板。
+* **`-`** - <mark style="color:orange;">**反转**</mark>:
+  * 反转调色板的顺序。\
+    例如 `-##Grayscale` 是反序的 ##Grayscale 预设调色板（从白色开始而非黑色）。
+* **`(start:end)`** - <mark style="color:orange;">**子调色板**</mark>:
+  * 返回调色板的一部分。\
+    例如 `##Grayscale(1:8)` 将返回 ##Grayscale 预设调色板的前 8 个方块。
+* **`*`** - <mark style="color:orange;">**重复器**</mark>:
+  * 将前一个段落重复指定的次数。\
+    例如 `gold_block*10,diamond_block` 将返回一个由 10 个金块组成的调色板，随后是一个钻石块。
+* **`[]`** - <mark style="color:orange;">**分组**</mark>:
+  * 将调色板组合在一起，以便修饰符将其视为单个调色板。\
+    例如 `-##Grayscale,gold_block` 将返回反序的 ##Grayscale 预设调色板，末尾带有一个金块。而 `-[##Grayscale,gold_block]` 则会将金块返回在开头。
+* **`=`** - <mark style="color:orange;">**结果**</mark>:
+  * 如果需要，允许将调色板通过 Tab 键补全为其方块列表。
 
-* &#x20;**`,`** - 连接：将一个方块或调色板添加到前面一个方块或调色板的末尾。 例如，
-   `stone,dirt` 是由石头和泥土组成的两个方块的调色板。 `stone,##LegacyWool` 是由石头和 ##LegacyWool 预设调色板中的方块组成的调色板。
-* &#x20;**`-`** - 反转：颠倒调色板的顺序。 例如， `-##LegacyWool` 是 ##LegacyWool 预设调色板的反向顺序（从黑色开始而不是白色）。
-* &#x20;**`(start:end)`** - 子调色板：返回调色板的一部分。 例如， `##LegacyWool(1:8)` 将返回 ##LegacyWool 预设调色板的前8个方块。
-* &#x20;**`*`** - 重复器：重复前一个段一定次数。 例如， `gold_block*10,diamond_block` 将返回一个调色板，其中有10个金块，然后是一个钻石块。
-* &#x20;**`[]`** - 分组：将调色板组合在一起，使修饰符可以将它们视为单个调色板。 例如， `-##LegacyWool,gold_block` 将返回反向的 ##LegacyWool 预设调色板，最后是一个金块。而 `-[##LegacyWool,gold_block]` 将在开始处返回一个金块。
-* &#x20;**`=`** - 结果：如果需要，允许调色板被 tab 键自动完成为其方块列表。
+### 视频教程
 
+[MegRae](https://megrae.art/) 也制作了一个关于调色板的教程：
 
-
-**##LegacyWool 调色板预设:**
-
-<figure><img src="../.gitbook/assets/2024-02-04_19.31.54.png" alt=""><figcaption></figcaption></figure>
+{% embed url="https://youtu.be/VGsTle3g9AU" %}

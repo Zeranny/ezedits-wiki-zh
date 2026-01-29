@@ -1,20 +1,22 @@
-# 平滑 Smoothing
+<!-- langmirror:chunk 0 -->
+# 平滑处理 (Smoothing)
 
 ### `//ezsmooth`
 
 <details>
 
-<summary>平滑</summary>
+<summary>平滑 (Smooth)</summary>
 
-**`//ezsmooth <radii> <iterations> <bias>`**
+**`//ezsmooth <半径> <迭代次数> <偏向> [-w <预设>]`**
 
 **`别名: //ezsm`**
 
-`//ezsmooth` 命令使用三维平滑算法来平滑选定区域的边缘和表面。
+`//ezsmooth` 指令使用三维平滑算法来平滑选区的边缘和表面。
 
-* **Radii**: 平滑半径，可以是一个值或三个逗号分隔的值，分别用于东西、上下和南北方向。此参数控制平滑效果的范围。
-* **Iterations**: 执行平滑操作的次数。更多的迭代次数会导致更平滑的结果，但会增加处理时间。
-* **Bias**: 在 -1.0 和 1.0 之间的值，调整平滑效果的扩展或收缩。正值扩展平滑区域，负值收缩平滑区域。
+* **半径 (Radii)**: 平滑操作的半径。可以是一个数值，也可以是三个由逗号分隔的数值（分别对应 X、Y、Z 轴）。该参数控制平滑效果的影响范围。
+* **迭代次数 (Iterations)**: 执行平滑操作的次数。迭代次数越多，结果越平滑，但计算时间也越长。
+* **偏向 (Bias)**: 介于 -1.0 到 1.0 之间的值，用于调整平滑效果是向外扩张还是向内收缩。正值会使平滑区域扩张，负值则会收缩。
+* **-w**: 详见 [平滑方块](../smoothblocks/smoothblocks.md)。
 
 </details>
 
@@ -22,15 +24,16 @@
 
 <details>
 
-<summary>膨胀</summary>
+<summary>膨胀 (Inflate)</summary>
 
-**`//ezinflate <radius>`**
+**`//ezinflate <半径> [-w <预设>]`**
 
 **`别名: //inflate`**
 
-`//ezinflate` 命令通过指定的量扩展选定区域内的方块体积，有效地“膨胀”建筑。
+`//ezinflate` 指令将选区内的方块体积按指定距离向外扩张，从而实现对建筑的"膨胀"效果。
 
-* **Radius**: 指定以方块为单位的扩展距离。此值决定从原始表面创建新的膨胀表面的距离。
+* **半径 (Radii)**: 指定扩张的距离。可以是一个数值，也可以是三个由逗号分隔的数值（分别对应 X、Y、Z 轴）。该数值决定了新表面偏离原始表面的距离。
+* **-w**: 详见 [平滑方块](../smoothblocks/smoothblocks.md)。
 
 </details>
 
@@ -38,36 +41,61 @@
 
 <details>
 
-<summary>收缩</summary>
+<summary>收缩 (Deflate)</summary>
 
-**`//ezdeflate <radius>`**
+**`//ezdeflate <半径> [-w <预设>]`**
 
 **`别名: //deflate`**
 
-`//ezdeflate` 命令通过指定的量收缩选定区域内的方块体积，有效地“收缩”建筑。
+`//ezdeflate` 指令将选区内的方块体积按指定距离向内收缩。
 
-* **Radius**: 指定以方块为单位的收缩距离。此值决定从原始表面向内移除方块的距离。
+<!-- langmirror:chunk 1 -->
+* **半径 (Radii)**: 指定收缩的距离。可以是一个数值，也可以是三个由逗号分隔的数值（分别对应 X、Y、Z 轴）。该数值决定了从原始表面向内移除方块的深度。
+* **-w**: 详见 [平滑方块](../smoothblocks/smoothblocks.md)。
 
 </details>
 
-### `//ezsmoothblocks`
+### `//ezsmoothblocks` (v0.15.0 及以上版本)
 
 <details>
 
-<summary>半方块过渡</summary>
+<summary>平滑方块 (SmoothBlocks)</summary>
 
-**`//ezsmoothblocks <radius> <iterations> <bias> [-s] [-t] [-w]`**
+**`//ezsmoothblocks <预设> <半径> <偏向>`**
 
-**`别名: //smoothblocks`**
+**`别名: //ezsb`**
 
-`//ezsmoothblocks` 命令通过放置台阶、楼梯和墙壁来修改选定区域，以创建显著更平滑的表面。
+`//ezsmoothblocks` 指令通过在选区内智能放置台阶、楼梯和墙等方块，创造出更加平滑且具有细节的表面。
 
-* **Radius**: 指定以方块为单位的平滑半径。此值决定在平滑过程中考虑的每个方块周围的区域。
-* **Iterations**: 执行平滑操作的次数。更多的迭代次数会导致更平滑的结果，但会增加处理时间。
-* **Bias**: 在 -1.0 和 1.0 之间的值，调整平滑效果的扩展或收缩。正值倾向于扩展平滑区域，负值收缩平滑区域，提供对最终外观的控制。
-* **-s**: 限制平滑过程仅使用台阶。
-* **-t**: 排除墙壁平滑。
-* **-w**: 使用另一组方块。
+* **预设 (Profile)**: 决定使用的方块集合（如石质、木质等）。详见 [#预设](../smoothblocks/smoothblocks.md#profiles "mention")。
+
+- **半径 (Radius)**: 指定平滑计算的半径（单位：方块）。该值决定了计算平滑度时考虑的周围区域大小。值越大，平滑效果越明显。
+
+* **偏向 (Bias)**: 介于 -1.0 到 1.0 之间的值，用于微调平滑效果，决定添加或移除方块的倾向。正值倾向于放置更多方块，负值则倾向于移除。
+* **-w**: 详见 [平滑方块](../smoothblocks/smoothblocks.md)。
 
 </details>
 
+#### `//ezsmoothblocks` (v0.14.0 及更早版本)
+
+<details>
+
+<summary>平滑方块（旧版）</summary>
+
+**`//ezsmoothblocks <半径> <迭代次数> <偏向> [-s] [-t] [-w]`**
+
+**`别名: //smoothblocks`**
+
+`//ezsmoothblocks` 指令通过放置台阶、楼梯和墙来平滑选定区域。
+
+<!-- langmirror:chunk 2 -->
+* **半径 (Radius)**: 指定平滑计算的半径。（以方块为单位）
+* **迭代次数 (Iterations)**: 平滑操作执行的次数。更多的迭代次数会产生更平滑的结果，但会增加处理时间。
+* **偏向 (Bias)**: 介于 -1.0 到 1.0 之间的值，控制最终外观的扩张或收缩感。
+* **-s**: 限制平滑过程仅使用台阶。
+* **-t**: 在平滑过程中不使用墙。
+* **-w**: 使用备选方块集。
+
+</details>
+
+***
