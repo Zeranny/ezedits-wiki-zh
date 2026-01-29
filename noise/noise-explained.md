@@ -1,70 +1,69 @@
 <!-- langmirror:chunk 0 -->
-# Noise 噪声详解
+# 噪声功能详解 (Noise Explained)
 
-对于从未了解过它的人来说，噪声（Noise）可能是一个复杂的话题，但简单来说，噪声是一种通过某些输入（通常是 X,Y,Z 坐标）获取数值的方法。
+对于初学者来说，**噪声 (Noise)** 可能是一个比较抽象的概念。简单理解，噪声是一种基于某些输入（通常是 X,Y,Z 坐标）来计算并返回特定数值的数学方法。
 
-你最熟悉噪声的地方可能是在 Minecraft 的地形生成中。在世界中的每一个点，多个噪声函数被组合在一起，用以确定是否应当放置方块，以及如果放置的话，应该放置哪种方块。
+你最熟悉的噪声应用场景可能是 Minecraft 的地形生成：在世界的每一个点上，系统会组合多个噪声函数来决定该坐标应当放置哪种方块，或者是否留空。
 
-这基本上也是我们在 ezEdits 中所做的，利用噪声来生成形状、地形和纹理。
+在 ezEdits 中，我们利用噪声来辅助生成几何形状、模拟自然地形以及复杂的铺色纹理。
 
-在插件中，你会发现几种噪声类型，每种类型都有不同的特性，特别是 Cellular（细胞噪声）还带有许多你可以自定义的额外参数。
+插件内置了多种噪声类型，每种类型都有独特的视觉特征。其中 **Cellular (细胞噪声)** 拥有最丰富的自定义参数。
 
-使用噪声的众多功能包括：
+噪声的核心应用场景包括：
 
-* `//eznoisegen ...` - _Noisegen（噪声生成）命令_
-* `#eznoisemask` - _Masks（蒙版）_
-* `//ezbrush gradient ...` - _Brushes（笔刷）_
+* `//eznoisegen ...` - [噪声生成指令](noise-commands.md)
+* `#eznoisemask` - [噪声蒙版](../masks-and-patterns/masks.md)
+* `//ezbrush gradient ...` - [梯度渐变笔刷](../brushes-and-tools/brushes/)
 
-_ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈推荐使用此网站来实验噪声参数：_[http://auburn.github.io/FastNoiseLite/](http://auburn.github.io/FastNoiseLite/)
+_ezEdits 的噪声系统基于 FastNoiseLite 的优化版本。我们强烈建议你在以下网站实验各种参数以获得直观感受：_[http://auburn.github.io/FastNoiseLite/](http://auburn.github.io/FastNoiseLite/)
 
-## Noise Parameters 噪声参数
+## 噪声参数 (Noise Parameters)
 
-每个参数和许多数值都有简写，例如用 "ft" 代替 "FractalType"，或用 "Si" 代替 "OpenSimplex2"。在可行的地方，简写会显示在括号中。\
+大多数参数和数值都有对应的简写，例如用 `ft` 代替 `FractalType` (分形类型)。在说明中，简写会标注在括号内。\
 <mark style="color:red;">`红色 = 参数`</mark> <mark style="color:purple;">`紫色 = 数值`</mark>
 
-### Noise Type 噪声类型
+### 噪声类型 (Noise Type)
 
 <details>
 
-<summary>设置噪声类型<br></summary>
+<summary>设置基础噪声类型</summary>
 
-设置要使用的噪声类型。这是任何噪声的开始，格式为 `Noise()`，例如 `Perlin()`，所有其他参数都将放在括号之间。
+这是定义噪声的第一步，基本格式为 `类型()`，如 `Perlin()`。所有的配置参数都将写在括号内。
 
 <!-- langmirror:chunk 1 -->
-* <mark style="color:purple;">`Perlin (Pe)`</mark>
-* <mark style="color:purple;">`OpenSimplex2 (Si)`</mark>
-* <mark style="color:purple;">`OpenSimplex2S (Sm)`</mark>
-* <mark style="color:purple;">`Value (Va)`</mark>
-* <mark style="color:purple;">`ValueCubic (VC)`</mark>
-* <mark style="color:purple;">`White (Wh)`</mark>
-* <mark style="color:purple;">`Cellular (Ce)`</mark>
-* <mark style="color:purple;">`Shard (Sh)`</mark>
+* <mark style="color:purple;">`Perlin (Pe)`</mark> - 柏林噪声（最经典，过渡自然）
+* <mark style="color:purple;">`OpenSimplex2 (Si)`</mark> - 改进后的 Simplex 噪声
+* <mark style="color:purple;">`OpenSimplex2S (Sm)`</mark> - 更平滑的 Simplex 变体
+* <mark style="color:purple;">`Value (Va)`</mark> - 值噪声（网格感略强）
+* <mark style="color:purple;">`ValueCubic (VC)`</mark> - 三次插值值噪声
+* <mark style="color:purple;">`White (Wh)`</mark> - 白噪声（完全随机，类似电视雪花）
+* <mark style="color:purple;">`Cellular (Ce)`</mark> - 细胞噪声（沃罗诺伊图，蜂巢感）
+* <mark style="color:purple;">`Shard (Sh)`</mark> - 碎片噪声
 
 </details>
 
-### 基础噪声参数
+### 通用噪声参数
 
 <details>
 
-<summary>基础噪声参数</summary>
+<summary>基础配置项</summary>
 
 <!-- langmirror:chunk 2 -->
 * <mark style="color:red;">`Seed (s)`</mark>\
-  设置噪声的种子值。-1 或不填将导致生成随机噪声种子。
+  噪声种子。设为 -1 或不填将生成随机种子。
 * <mark style="color:red;">`Frequency (f)`</mark>\
-  设置噪声的频率。较高的频率会导致更陡峭的噪声，较低的值会导致更平滑的噪声。
+  频率。值越高噪声越密集/陡峭，值越低噪声越平滑/开阔。
 * <mark style="color:red;">`Inverted (i)`</mark>\
-  是否反转噪声值。默认为 false。
-  * <mark style="color:purple;">`True`</mark>
-  * <mark style="color:purple;">`False`</mark>
+  是否反转噪声值。
+  * <mark style="color:purple;">`True`</mark> (反转)
+  * <mark style="color:purple;">`False`</mark> (默认)
 * <mark style="color:red;">`ValueMapping (m)`</mark>\
-  是否忽略或覆盖值映射。默认情况下，噪声采样映射在 0 到 1 之间。
+  数值映射模式。默认情况下，噪声值被映射在 0 到 1 之间。
   * <mark style="color:purple;">`Default (Def)`</mark>
   * <mark style="color:purple;">`None (No)`</mark>
-  * <mark style="color:purple;">`Override (OR)`</mark>\
-    **如果覆盖：**
-    * <mark style="color:red;">`LowerBound (l)`</mark>
-    * <mark style="color:red;">`UpperBound (u)`</mark>
+  * <mark style="color:purple;">`Override (OR)`</mark>（手动覆盖映射范围）：
+    * <mark style="color:red;">`LowerBound (l)`</mark> (下限)
+    * <mark style="color:red;">`UpperBound (u)`</mark> (上限)
 * <mark style="color:red;">`XScaling (x)`</mark>\
   可用于拉伸或挤压 X 轴。
 * <mark style="color:red;">`YScaling (y)`</mark>\
@@ -74,78 +73,63 @@ _ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈�
 
 </details>
 
-### Cellular Noise Parameters（细胞噪声参数）
+### 细胞噪声参数 (Cellular Noise Parameters)
 
 <details>
 
-<summary><strong>Additional Cellular Noise Parameters（额外细胞噪声参数）</strong></summary>
+<summary><strong>额外细胞噪声专属参数</strong></summary>
 
-* <mark style="color:red;">`CellularJitterModifier (cJ)`</mark>\
-  通常为 `0..1.0`\
-  控制细胞噪声节点的随机抖动或分布，0 为完美的网格，1 为最大程度的“随机”且无重叠。超过 1 的值将开始与其相邻节点重叠。
-* <mark style="color:red;">`CellularDistanceFunction (cD)`</mark>\
-
+* <mark style="color:red;">`CellularJitterModifier (cJ)`</mark> (抖动修正)\
+  通常范围 `0..1.0`。控制细胞节点的随机分布。0 为完美整齐的网格，1 为最大程度的随机分布且无重叠。
+* <mark style="color:red;">`CellularDistanceFunction (cD)`</mark> (距离算法)\
+  控制计算点到细胞节点距离的数学方法：
 <!-- langmirror:chunk 3 -->
-控制用于确定每个点到其节点之间距离值的数学方法。
-  * <mark style="color:purple;">`Euclidean (e)`</mark>（欧几里得距离）
-  * <mark style="color:purple;">`EuclideanSq (sq)`</mark>（欧几里得距离平方）
-  * <mark style="color:purple;">`Manhattan (man)`</mark>（曼哈顿距离）
-  * <mark style="color:purple;">`Hybrid (h)`</mark>（混合距离）
-  * <mark style="color:purple;">`Minkovski1 (m1)`</mark>（闵可夫斯基距离1）
-  * <mark style="color:purple;">`Minkowvki4 (m4)`</mark>（闵可夫斯基距离4）
-  * <mark style="color:purple;">`Minkowski99 (m99)`</mark>（闵可夫斯基距离99）
-  * <mark style="color:purple;">`Rounded (r)`</mark>（圆整距离）
-* <mark style="color:red;">`CellularReturnType (cR)`</mark>\
-  控制距离值在返回前如何进行修改。\
-  所有 Distance2* 值均指代第 2 近的节点，而非最近的节点。
-  * <mark style="color:purple;">`CellValue (cell)`</mark>（单元格值）
-  * <mark style="color:purple;">`Distance (1)`</mark>（距离）
-  * <mark style="color:purple;">`DistanceSquared (sq)`</mark>（距离平方）
-  * <mark style="color:purple;">`DistanceInverse (inv)`</mark>（距离反比）
-  * <mark style="color:purple;">`DistanceLog (log)`</mark>（距离对数）
-  * <mark style="color:purple;">`DistanceExp (exp)`</mark>（距离指数）
-  * <mark style="color:purple;">`Distance2 (2)`</mark>（距离2）
-  * <mark style="color:purple;">`Distance2Add (2add)`</mark>（距离2加）
-  * <mark style="color:purple;">`Distance2Add (2sub)`</mark>（距离2减）
-  * <mark style="color:purple;">`Distance2Add (2mul)`</mark>（距离2乘）
-  * <mark style="color:purple;">`Distance2Add (2div)`</mark>（距离2除）
-  * <mark style="color:purple;">`Distance2Sq (2sq)`</mark>（距离2平方）
-  * <mark style="color:purple;">`Distance2Inv (2inv)`</mark>（距离2反比）
-
+  * <mark style="color:purple;">`Euclidean (e)`</mark> (欧几里得距离)
+  * <mark style="color:purple;">`EuclideanSq (sq)`</mark> (欧几里得平方距离)
+  * <mark style="color:purple;">`Manhattan (man)`</mark> (曼哈顿距离)
+  * <mark style="color:purple;">`Hybrid (h)`</mark> (混合距离)
+  * <mark style="color:purple;">`Minkovski1 (m1)`</mark> (闵可夫斯基 1)
+  * <mark style="color:purple;">`Minkowvki4 (m4)`</mark> (闵可夫斯基 4)
+  * <mark style="color:purple;">`Minkowski99 (m99)`</mark> (闵可夫斯基 99)
+  * <mark style="color:purple;">`Rounded (r)`</mark> (圆角距离)
+* <mark style="color:red;">`CellularReturnType (cR)`</mark> (返回类型)\
+  控制最终返回的数值类型：
+  * <mark style="color:purple;">`CellValue (cell)`</mark> (单元格固定值)
+  * <mark style="color:purple;">`Distance (1)`</mark> (到最近点的距离)
+  * <mark style="color:purple;">`DistanceSquared (sq)`</mark>
+  * <mark style="color:purple;">`DistanceInverse (inv)`</mark> (距离反比)
+  * <mark style="color:purple;">`DistanceLog (log)`</mark> (距离对数)
+  * <mark style="color:purple;">`DistanceExp (exp)`</mark> (距离指数)
+  * <mark style="color:purple;">`Distance2 (2)`</mark> (到第二近点的距离)
+  * <mark style="color:purple;">`Distance2Add (2add)`</mark> / `2sub` / `2mul` / `2div` (距离运算)
+  * <mark style="color:purple;">`Distance2Sq (2sq)`</mark>
+  * <mark style="color:purple;">`Distance2Inv (2inv)`</mark>
 <!-- langmirror:chunk 4 -->
-* <mark style="color:purple;">`Distance2Log (2log)`</mark>
+  * <mark style="color:purple;">`Distance2Log (2log)`</mark>
   * <mark style="color:purple;">`Distance2Exp (2exp)`</mark>
-  * <mark style="color:purple;">`Edge (e)`</mark>
-  * <mark style="color:purple;">`Rounded (r)`</mark>
-  * <mark style="color:purple;">`NoiseLookup (n)`</mark>\
-    **额外噪声查找参数：**
+  * <mark style="color:purple;">`Edge (e)`</mark> (细胞边缘模式)
+  * <mark style="color:purple;">`Rounded (r)`</mark> (圆角边缘)
+  * <mark style="color:purple;">`NoiseLookup (n)`</mark> (噪声查找模式)\
+    当使用 NoiseLookup 时，可配置以下额外参数：
     * <mark style="color:red;">`CellularNoiseLookup (cN)`</mark>\
-      当使用 NoiseLookup 返回类型时，此参数控制叠加在细胞噪声之下的基础噪声。
-      * <mark style="color:purple;">`Perlin (Pe)`</mark>
-      * <mark style="color:purple;">`OpenSimplex2 (Si)`</mark>
-      * <mark style="color:purple;">`OpenSimplex2S (Sm)`</mark>
-      * <mark style="color:purple;">`Value (Va)`</mark>
-      * <mark style="color:purple;">`ValueCubic (VC)`</mark>
-      * <mark style="color:purple;">`White (Wh)`</mark>
-      * <mark style="color:purple;">`Cellular (Ce)`</mark>
+      控制填充在细胞结构内部的基础噪声类型。
     * <mark style="color:red;">`CellularNoiseLookupFrequency (cF)`</mark>\
-      控制基础噪声的频率。
+      控制该基础噪声的频率。
 
 </details>
 
-### Shard（碎片）噪声参数
+### 碎片噪声参数 (Shard Noise)
 
 <details>
 
-<summary>额外 Shard 噪声参数</summary>
+<summary>额外 Shard 专属参数</summary>
 
-* <mark style="color:red;">`Sharpness (h)`</mark>\
-  通常为 `0..1.0`\
-  控制 Shard 噪声的图案锐度。较高的值会使图案内部的边缘更清晰，而较低的值则显得更模糊。
+* <mark style="color:red;">`Sharpness (h)`</mark> (锐度)\
+  通常范围 `0..1.0`。值越高边缘越锋利，值越低边缘越模糊。
 
 </details>
 
-### Fractal（分形）噪声参数
+### 分形参数 (Fractal Parameters)
 
 <details>
 
@@ -153,44 +137,43 @@ _ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈�
 
 <!-- langmirror:chunk 5 -->
 * <mark style="color:red;">`FractalType (fT)`</mark>\
-  设置要使用的分形噪声类型。
-  * <mark style="color:purple;">`None (N)`</mark>
-  * <mark style="color:purple;">`FBm (F)`</mark>
-  * <mark style="color:purple;">`Ridged (R)`</mark>
-  * <mark style="color:purple;">`PingPong (P)`</mark>\
-    **额外的 PingPong 分形参数：**
-    * <mark style="color:red;">`PingPongStrength (fP)`</mark>
+  设置分形噪声的叠加模式。
+  * <mark style="color:purple;">`None (N)`</mark> (无)
+  * <mark style="color:purple;">`FBm (F)`</mark> (分形布朗运动，最常见)
+  * <mark style="color:purple;">`Ridged (R)`</mark> (脊状噪声，常用于山脉)
+  * <mark style="color:purple;">`PingPong (P)`</mark> (乒乓模式)\
+    * <mark style="color:red;">`PingPongStrength (fP)`</mark> (乒乓强度)
 
-**如果选择了除 `None` 以外的分形类型：**
+**若选择了非 `None` 类型：**
 
-* <mark style="color:red;">`Octaves (fO)`</mark>\
-  设置要使用的分形噪声层数。
-* <mark style="color:red;">`Lacunarity (fL)`</mark>\
-  设置每个分形层的缩放比例。值 >1 会有效增加每层的频率，值 <1 会有效降低每层的频率。
-* <mark style="color:red;">`Gain (fG)`</mark>\
-  设置每个分形层的相对强度。值 <1 会降低每层的强度，值 >1 会增加强度。
-* <mark style="color:red;">`WeightedStrength (fW)`</mark>\
-  设置每层强度对噪声值的响应程度。
+* <mark style="color:red;">`Octaves (fO)`</mark> (倍频/层数)\
+  分形叠加的层数。层数越多细节越丰富，但性能消耗越大。
+* <mark style="color:red;">`Lacunarity (fL)`</mark> (空隙度)\
+  控制每层分形之间的频率比例。通常 >1 以增加高频细节。
+* <mark style="color:red;">`Gain (fG)`</mark> (增益)\
+  控制每层分形的强度比例。通常 <1 使高频细节的影响力逐渐减弱。
+* <mark style="color:red;">`WeightedStrength (fW)`</mark> (加权强度)\
+  设置每层强度对最终噪声值的响应敏感度。
 
 </details>
 
-### Domain Warp Parameters（定义域扭曲参数）
+### 定义域扭曲 (Domain Warp Parameters)
 
 <details>
 
-<summary>Domain Warp Parameters（定义域扭曲参数）</summary>
+<summary>噪声扭曲与变形配置</summary>
 
 * <mark style="color:red;">`DomainWarpType (wT)`</mark>\
-  设置要使用的定义域扭曲类型。
+  定义如何让噪声产生扭曲感（如卷曲、流体感）。
   * <mark style="color:purple;">`None (N)`</mark>
   * <mark style="color:purple;">`BasicGrid (G)`</mark>
   * <mark style="color:purple;">`OpenSimplex2 (S)`</mark>
   * <mark style="color:purple;">`OpenSimplex2Reduced (R)`</mark>
   * <mark style="color:purple;">`Flow (F)`</mark>
-  * <mark style="color:purple;">`Turbulence (T)`</mark>
+  * <mark style="color:purple;">`Turbulence (T)`</mark> (湍流)
 
 <!-- langmirror:chunk 6 -->
-**如果选择了 `None`（无）以外的域扭曲（Domain Warp）类型：**
+**若选择了非 `None` 的扭曲类型：**
 
 * <mark style="color:red;">`DomainWarpFreq (wF)`</mark>\
   设置域扭曲的频率。
@@ -218,6 +201,6 @@ _ezEdits 中的噪声基于 FastNoiseLite 的修改版本，因此我们强烈�
 
 **`Cellular(cellularDistanceFunction:Euclidean,cellularReturnType:NoiseLookup,cellularNoiseLookup:Perlin,cellularNoiseLookupFrequency:0.2,Frequency:0.1)`**
 
-_同样的噪声，但使用所有缩写：_ **`Ce(cD:e,cR:n,cN:Pe,cF:.2,F:.1)`**
+_同样的噪声，使用简写模式：_ **`Ce(cD:e,cR:n,cN:Pe,cF:.2,F:.1)`**
 
 <figure><img src="../.gitbook/assets/2024-01-10_20.41.26.png" alt=""><figcaption></figcaption></figure>

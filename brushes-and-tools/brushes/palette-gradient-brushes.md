@@ -26,9 +26,9 @@
 * <mark style="color:orange;">**Radius**</mark> (默认值: 8): 设置刷子的半径。
 * <mark style="color:orange;">**Interpolation**</mark> (默认值: NONE): 确定渐变过渡中使用的插值类型。
 * <mark style="color:orange;">**Bleed**</mark> (默认值: 0.5): 调整插值强度，正常范围为 0 到 1。
-* <mark style="color:orange;">**`-a`**</mark>: 激活后，渐变允许替换空气方块。
+* <mark style="color:orange;">**`-a`**</mark>: 开启后，渐变允许替换空气方块。
 * <mark style="color:orange;">**`-v`**</mark>: 停用 WorldEditCUI 集成。
-* <mark style="color:orange;">`-w`</mark>: 尝试使用最接近的现有材料为形状方块（台阶、楼梯等）设置纹理。
+* <mark style="color:orange;">`-w`</mark>: 尝试用最接近的现有材料为异形方块（楼梯、台阶等）上纹理。
 * <mark style="color:orange;">**`-n <noise>`**</mark> (默认值: `White()`): 为渐变效果添加基础噪声场。
 * <mark style="color:orange;">**`-z <scale>`**</mark> (默认值: 1): 修改噪声的缩放比例。
 * <mark style="color:orange;">**`-d <distanceFunction>`**</mark> (默认值: NONE): 设置距离模式，使刷子基于与初始方块的距离以及给定的距离函数进行工作。
@@ -59,10 +59,10 @@
 * <mark style="color:orange;">**Radius**</mark> (默认: 8): 设置笔刷的半径。
 * <mark style="color:orange;">**Interpolation**</mark> (默认: LINEAR): 确定渐变过渡中使用的插值类型。
 * <mark style="color:orange;">**Bleed**</mark> (默认: 0.5): 调整插值的强度，正常范围为 0 到 1。
-* <mark style="color:orange;">**`-a`**</mark>: 激活后，允许渐变替换空气方块。
+* <mark style="color:orange;">**`-a`**</mark>: 开启后，允许渐变替换空气方块。
 * <mark style="color:orange;">**`-d`**</mark>: 激活“到中心的距离”模式，该模式根据到笔画中心线的距离（而非沿笔画的距离）应用渐变。
 * <mark style="color:orange;">**`-v`**</mark>: 禁用 WorldEditCUI 集成。
-* <mark style="color:orange;">`-w`</mark>: 尝试使用最接近的现有材料为形状方块（台阶、楼梯等）设置纹理。
+* <mark style="color:orange;">`-w`</mark>: 尝试用最接近的现有材料为异形方块（楼梯、台阶等）上纹理。
 * <mark style="color:orange;">**`-x`**</mark>: 在每次笔画放置后清除笔刷的路径。
 * <mark style="color:orange;">**`-n <noise>`**</mark> (默认: `White()`): 为渐变效果添加基础噪声场。
 * <mark style="color:orange;">**`-z <scale>`**</mark> (默认: 1): 修改噪声的缩放比例。

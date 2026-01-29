@@ -1,5 +1,5 @@
 <!-- langmirror:chunk 0 -->
-# Brushes
+# Brushes（画笔）
 
 所有笔刷都包含在 `//ezbrush ...` (`//ezbr`) 命令中。
 

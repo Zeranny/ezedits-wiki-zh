@@ -1,10 +1,10 @@
 ---
-description: ezEdits 中的权限列表
+description: ezEdits 插件完整权限列表
 ---
 
-# 权限
+# 权限设置 (Permissions)
 
-权限被分组为权限包，可以通过 `ezedits.permpack.***` 授予
+权限按功能包进行分组，可以通过授予 `ezedits.permpack.***` 来批量开启。
 
 <table><thead><tr><th width="274">权限</th><th width="327">描述</th><th>权限包</th></tr></thead><tbody><tr><td>ezedits.general.wiki</td><td><strong>/ezedits wiki</strong><br>在聊天中打印此 wiki 的链接</td><td>基础(Basic)</td></tr><tr><td>ezedits.general.info</td><td><strong>/ezedits info</strong><br>在聊天中打印基本插件信息</td><td>基础(Basic)</td></tr><tr><td>ezedits.general.quiet</td><td><strong>/ezedits quiet</strong><br>切换 ezEdits 的部分聊天消息的开/关</td><td>基础(Basic)</td></tr><tr><td>ezedits.admin.reload</td><td><strong>/ezedits reload</strong><br>重新加载配置</td><td>管理员(Admin)</td></tr><tr><td>ezedits.array</td><td><strong>//ezarray</strong><br>沿路径依次放置多个结构</td><td>高级(Advanced)</td></tr><tr><td>ezedits.brush.array</td><td><strong>//ezbr array</strong><br>允许沿绘制的路径放置多个形状或 3D 结构</td><td>高级(Advanced)</td></tr><tr><td>ezedits.brush.gradient</td><td><strong>//ezbr gradient</strong><br>将渐变笔刷绑定到物品</td><td>中级(Intermediate)</td></tr><tr><td>ezedits.brush.gradientstroke</td><td><strong>//ezbr gradientstroke</strong><br>将渐变描边笔刷绑定到物品</td><td>中级(Intermediate)</td></tr><tr><td>ezedits.brush.paletteshift</td><td><strong>//ezbr paletteshift</strong><br>将调色板偏移笔刷绑定到物品</td><td>中级(Intermediate)</td></tr><tr><td>ezedits.brush.scatter</td><td><strong>//ezbr scatter</strong><br>允许在区域内放置多个形状或 3D 结构</td><td>高级(Advanced)</td></tr><tr><td>ezedits.debug</td><td><strong>//ezdebug ...</strong><br>各种调试命令。<br>正常使用不需要</td><td>管理员(Admin)</td></tr><tr><td>ezedits.debug.loadingbar</td><td><strong>//ezdebug clearLoadingBars</strong><br>清除屏幕上的任何活动进度条。</td><td>基础(Basic)</td></tr><tr><td>ezedits.deform.hexagonalize</td><td><strong>//ezdeform hexagonalize</strong><br>将选区中的方块变形为六边形柱体</td><td>中级(Intermediate)</td></tr><tr><td>ezedits.deform.noise</td>
 

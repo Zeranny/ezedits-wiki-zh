@@ -1,6 +1,6 @@
 # 安装
 
-ezEdits 的安装方式与其他插件相同，但需要先安装 WorldEdit 或 FastAsyncWorldEdit 中的任意一个（不需要同时安装）。
+ezEdits 的安装方式与其他 Minecraft 插件一致，但它依赖于 WorldEdit 或 FastAsyncWorldEdit。你只需安装其中任意一个即可（无需同时安装）。
 
 * [WorldEdit](https://modrinth.com/plugin/worldedit)
 * [FastAsyncWorldEdit](https://www.spigotmc.org/resources/fastasyncworldedit.13932/)
